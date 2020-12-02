@@ -1,0 +1,5 @@
+# gralde
+build
+.gradle
+# IDE
+.idea
