@@ -68,7 +68,7 @@ public final class OnlineDictionaryPlugin {
     public static class OnlineDictionaryMain implements IDictionaryFactory {
         private Language source = null;
         private Language target = null;
-        private static List<String> supportedDrivers = new ArrayList<>();
+        private static final List<String> supportedDrivers = new ArrayList<>();
         static {
             supportedDrivers.add("omegawiki");
         }
@@ -89,9 +89,7 @@ public final class OnlineDictionaryPlugin {
         public boolean isSupportedFile(final File file) {
             if (file.isFile() && file.toPath().endsWith("service.yml")) {
                 OnlineDictionaryService service = getService(file);
-                if (supportedDrivers.contains(service.getDriver())) {
-                    return true;
-                }
+                return service != null && supportedDrivers.contains(service.getDriver());
             }
             return false;
         }
