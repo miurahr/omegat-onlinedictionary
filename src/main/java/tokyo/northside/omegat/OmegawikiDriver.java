@@ -74,16 +74,10 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
         List<String> result = new ArrayList<>();
         List<OmegawikiDefinition> definitions = queryExpression(word);
         for (OmegawikiDefinition def : definitions) {
-            //if (isSameLanguage(def.getLang(), target)) {
-            //    if (isSameLanguage(def.getDefinition().getLang(), target) ||
-            //            isSameLanguage(def.getDefinition().getLang(), source)) {
-                    result.add(def.getDefinition().getText());
-            //    }
-            //}
+            result.add("DEF:".concat(def.getDefinition().getText()));
         }
         return result;
     }
-
 
     protected List<OmegawikiDefinition> queryExpression(final String word) {
         String queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
