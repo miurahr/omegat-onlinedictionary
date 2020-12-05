@@ -20,7 +20,7 @@ public class OnlineDictionaryDictionary implements IDictionary {
     }
 
     @Override
-    public List<DictionaryEntry> readArticles(String word) throws Exception {
+    public List<DictionaryEntry> readArticles(final String word) throws Exception {
         List<DictionaryEntry> articles = new ArrayList<>();
         for (IOnlineDictionaryDriver driver : drivers) {
             for (String definition : driver.readDefinition(word)) {
@@ -31,7 +31,7 @@ public class OnlineDictionaryDictionary implements IDictionary {
     }
 
     @Override
-    public List<DictionaryEntry> readArticlesPredictive(String word) throws Exception {
+    public List<DictionaryEntry> readArticlesPredictive(final String word) throws Exception {
         return null;
     }
 }

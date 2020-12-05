@@ -11,13 +11,13 @@ public class OnlineDictionaryService {
         this.driver = driver;
     }
 
-    public OnlineDictionaryService() {}
+    public OnlineDictionaryService() { }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -25,7 +25,7 @@ public class OnlineDictionaryService {
         return endpointUrl;
     }
 
-    public void setEndpointUrl(String endpointUrl) {
+    public void setEndpointUrl(final String endpointUrl) {
         this.endpointUrl = endpointUrl;
     }
 
@@ -33,7 +33,7 @@ public class OnlineDictionaryService {
         return driver;
     }
 
-    public void setDriver(String driver) {
+    public void setDriver(final String driver) {
         this.driver = driver;
     }
 }

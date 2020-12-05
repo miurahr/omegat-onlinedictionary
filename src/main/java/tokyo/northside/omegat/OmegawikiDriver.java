@@ -4,9 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.hc.client5.http.ClientProtocolException;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.ClassicHttpResponse;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.HttpStatus;
 import org.apache.hc.core5.http.ParseException;
@@ -18,9 +16,6 @@ import org.slf4j.LoggerFactory;
 import tokyo.northside.omegawiki.Parser;
 import tokyo.northside.omegawiki.OmegawikiDefinition;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.rmi.server.ExportException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -92,10 +87,10 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
     protected List<OmegawikiDefinition> queryExpression(final String word) {
         String queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
-        String result_json = query(queryUrl);
+        String resultJson = query(queryUrl);
         Parser omegawikiParser = new Parser();
         try {
-            omegawikiParser.parse(result_json);
+            omegawikiParser.parse(resultJson);
             List<OmegawikiDefinition> definitions = omegawikiParser.getDefinitions();
             if (definitions.size() > 0) {
                 return definitions;
@@ -110,26 +105,23 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
     protected String query(final String queryUrl) {
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
             HttpGet httpGet = new HttpGet(queryUrl);
-            final HttpClientResponseHandler<String> responseHandler = new HttpClientResponseHandler<String>() {
-                @Override
-                public String handleResponse(
-                        final ClassicHttpResponse response) throws IOException {
-                    final int status = response.getCode();
-                    if (status >= HttpStatus.SC_SUCCESS && status < HttpStatus.SC_REDIRECTION) {
-                        final HttpEntity entity = response.getEntity();
-                        try {
-                            return entity != null ? EntityUtils.toString(entity) : null;
-                        } catch (final ParseException ex) {
-                            throw new ClientProtocolException(ex);
+            final HttpClientResponseHandler<String> responseHandler = response -> {
+                final int status = response.getCode();
+                if (status >= HttpStatus.SC_SUCCESS && status < HttpStatus.SC_REDIRECTION) {
+                    try (HttpEntity entity = response.getEntity()) {
+                        if (entity != null) {
+                            return EntityUtils.toString(entity);
+                        } else {
+                            return null;
                         }
-                    } else {
-                        throw new ClientProtocolException("Unexpected response status: " + status);
+                    } catch (final ParseException ex) {
+                        throw new ClientProtocolException(ex);
                     }
+                } else {
+                    throw new ClientProtocolException("Unexpected response status: " + status);
                 }
-
             };
-            final String responseBody = httpclient.execute(httpGet, responseHandler);
-            return responseBody;
+            return httpclient.execute(httpGet, responseHandler);
         } catch (Exception e) {
             e.printStackTrace();
         }

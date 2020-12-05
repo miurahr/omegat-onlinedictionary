@@ -38,7 +38,7 @@ public class OnlineDictionary implements IDictionaryFactory {
     private Language source = null;
     private Language target = null;
 
-    public OnlineDictionary() {}
+    public OnlineDictionary() { }
 
     public OnlineDictionary(final Language source, final Language target) {
         this.source = source;

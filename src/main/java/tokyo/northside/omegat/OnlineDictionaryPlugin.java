@@ -4,7 +4,10 @@ import org.omegat.core.Core;
 import org.omegat.core.CoreEvents;
 import org.omegat.core.events.IApplicationEventListener;
 
-public class OnlineDictionaryPlugin {
+public final class OnlineDictionaryPlugin {
+
+    private OnlineDictionaryPlugin() { }
+
     /**
      * load plugin.
      */

@@ -6,6 +6,6 @@ public interface IOnlineDictionaryDriver {
 
     String getName();
 
-    List<String> readDefinition(final String word);
+    List<String> readDefinition(String word);
 
 }
