@@ -2,7 +2,10 @@ plugins {
     id 'groovy'
     id 'java'
     id 'checkstyle'
+    id 'com.diffplug.gradle.spotless' version '3.27.1'
+    id 'jacoco'
     id 'distribution'
+    id 'com.github.kt3k.coveralls' version '2.10.2'
 }
 
 group 'tokyo.northside'
@@ -32,6 +35,48 @@ dependencies {
     testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.0'
     testImplementation 'org.omegat:omegat:5.2.0'
     testImplementation "org.codehaus.groovy:groovy-all:3.0.1"
+}
+
+jacoco {
+    toolVersion = '0.8.6'
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
+
+spotless {
+    enforceCheck false
+    java {
+        removeUnusedImports()
+    }
+}
+
+task changedOnBranch {
+    description = 'List files that have been modified on this git branch.'
+    doLast {
+        ext.files = project.files(gitModifiedFiles())
+        ext.files.each { println(it) }
+    }
+}
+
+task spotlessChangedApply {
+    description = 'Apply code formatting to files that have been changed on the current branch.'
+    finalizedBy 'spotlessApply'
+    dependsOn changedOnBranch
+    doFirst {
+        spotlessJava.target = changedOnBranch.files.findAll {
+            it.path.endsWith('.java')
+        }
+    }
+}
+
+coveralls {
+    jacocoReportPath 'build/reports/jacoco/test/jacocoTestReport.xml'
 }
 
 jar {
