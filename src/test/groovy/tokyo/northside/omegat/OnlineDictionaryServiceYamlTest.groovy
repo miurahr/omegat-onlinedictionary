@@ -9,7 +9,7 @@ import static org.junit.Assert.*
 
 class OnlineDictionaryServiceYamlTest {
 
-    def resource = OnlineDictionary.class.getClassLoader().getResource("service.yml")
+    def resource = OnlineDictionaryPlugin.OnlineDictionaryMain.class.getClassLoader().getResource("service.yml")
 
     @Test
     void readYamlTest() throws Exception {
