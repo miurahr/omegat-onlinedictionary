@@ -27,4 +27,6 @@ public interface IOnlineDictionaryDriver {
 
     List<String> readDefinition(String word);
 
+    List<String> readTranslation(String word);
+
 }

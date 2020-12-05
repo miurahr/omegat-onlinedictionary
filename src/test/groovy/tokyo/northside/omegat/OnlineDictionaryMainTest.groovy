@@ -32,11 +32,11 @@ class OnlineDictionaryMainTest {
 
     @Test
     void onlineDictionarySearch() {
-        def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("es"))
+        def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("it"))
         def dictionary = onlineDictionary.loadDict(new File(resource.toURI()))
-        def definitions = dictionary.readArticles("translate")
-        def entry = definitions.get(0)
-        assertEquals("translate", entry.getWord())
-        assertTrue(entry.getArticle().startsWith("DEF:To change a written or spoken text from one language to another."))
+        def definitions = dictionary.readArticles("translation")
+        def entry = definitions.get(2)
+        assertEquals("translation", entry.getWord())
+        assertEquals("Move of an object to a new location without change in the size or orientation of an object.", entry.getArticle())
     }
 }

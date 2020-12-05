@@ -20,6 +20,9 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
 package tokyo.northside.omegat;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.hc.client5.http.ClientProtocolException;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -30,57 +33,51 @@ import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.omegat.util.Language;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import tokyo.northside.omegawiki.Parser;
+
+import tokyo.northside.omegawiki.ExpressionParser;
+import tokyo.northside.omegawiki.OmegawikiMeaning;
 import tokyo.northside.omegawiki.OmegawikiDefinition;
+import tokyo.northside.omegawiki.SyntransParser;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class OmegawikiDriver implements IOnlineDictionaryDriver {
-    private static final Logger LOGGER = LoggerFactory.getLogger(OmegawikiDriver.class);
 
     private String endpointUrl;
     private Language source;
     private Language target;
-    private final Map<String, OmegawikiEntry> cache = new HashMap<>();
+    private Map<String, String> languageMap;
+    private final MultiMap<String, OmegawikiEntry> cache = new MultiMap<>();
 
     public class OmegawikiEntry {
-        private String word;
-        private Integer dmid;
-        private List<String> definitions;
+        private String dmid;
 
-        public OmegawikiEntry(final String word, final Integer dmid) {
-            this.word = word;
+        public OmegawikiEntry(final String dmid) {
             this.dmid = dmid;
         }
 
-        public Integer getDmid() {
+        public String getDmid() {
             return dmid;
         }
-
-        public List<String> getDefinitions() {
-            return definitions;
-        }
-
-        public void addDefinition(final String definition) {
-            this.definitions.add(definition);
-        }
-
     }
 
-    public OmegawikiDriver(final String endpointUrl, final Language source, final Language target) {
+    public OmegawikiDriver(final String endpointUrl, final Language source, final Language target) throws IOException {
         this.endpointUrl = endpointUrl;
         this.source = source;
         this.target = target;
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        TypeReference<HashMap<String, String>> typeRef = new TypeReference<>() { };
+        try (InputStream is = OmegawikiDriver.class.getClassLoader().getResourceAsStream("languages.yml")) {
+            assert is != null;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            languageMap = mapper.readValue(reader, typeRef);
+        }
     }
 
-    private boolean isSameLanguage(final String deflang, final Language lang) {
-        return deflang.toLowerCase().equals(lang.getLocale().getDisplayLanguage().toLowerCase());
+    private boolean isSameLanguage(final String langId, final Language lang) {
+        return languageMap.getOrDefault(langId, "en").equals(lang.getLanguageCode());
     }
 
     @Override
@@ -90,28 +87,64 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
     @Override
     public List<String> readDefinition(final String word) {
-        List<String> result = new ArrayList<>();
-        List<OmegawikiDefinition> definitions = queryExpression(word);
-        for (OmegawikiDefinition def : definitions) {
-            result.add("DEF:".concat(def.getDefinition().getText()));
+        List<String> list = new ArrayList<>();
+        for (OmegawikiDefinition def : queryExpression(word)) {
+            if (isSameLanguage(def.getLangid(), source)) {
+                String text = def.getDefinition().getText();
+                list.add(text);
+            }
         }
-        return result;
+        return list;
+    }
+
+    @Override
+    public List<String> readTranslation(final String word) {
+        return querySyntrans(word).stream().map(OmegawikiMeaning::getE).collect(Collectors.toList());
+    }
+
+    protected List<OmegawikiMeaning> querySyntrans(final String word) {
+        List<OmegawikiMeaning> meanings = new ArrayList<>();
+        String queryUrlBase = endpointUrl.concat("?action=ow_syntrans&format=json&dm=").concat(word);
+        if (!cache.containsKey(word)) {
+            queryExpression(word);
+        }
+        if (!cache.containsKey(word)) {
+            for (OmegawikiEntry entry : cache.getValues(word)) {
+                String dmid = entry.getDmid();
+                String queryUrl = queryUrlBase.concat(dmid);
+                String resultJson = query(queryUrl);
+                SyntransParser parser = new SyntransParser();
+                try {
+                    parser.parse(resultJson);
+                    List<OmegawikiMeaning> result = parser.getMeanings();
+                    if (result.size() > 0) {
+                        meanings.addAll(result);
+                    }
+                } catch (JsonProcessingException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return meanings;
     }
 
     protected List<OmegawikiDefinition> queryExpression(final String word) {
         String queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
         String resultJson = query(queryUrl);
-        Parser omegawikiParser = new Parser();
+        ExpressionParser omegawikiParser = new ExpressionParser();
         try {
             omegawikiParser.parse(resultJson);
             List<OmegawikiDefinition> definitions = omegawikiParser.getDefinitions();
             if (definitions.size() > 0) {
-                return definitions;
+                for (OmegawikiDefinition definition : definitions) {
+                    cache.put(word, new OmegawikiEntry(definition.getDmid()));
+                }
             }
+            return definitions;
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
 
     }
 

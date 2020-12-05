@@ -21,6 +21,7 @@ package tokyo.northside.omegat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import org.omegat.core.Core;
 import org.omegat.core.CoreEvents;
 import org.omegat.core.dictionaries.DictionaryEntry;
@@ -29,12 +30,18 @@ import org.omegat.core.dictionaries.IDictionaryFactory;
 import org.omegat.core.events.IApplicationEventListener;
 import org.omegat.util.Language;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public final class OnlineDictionaryPlugin {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(OnlineDictionaryPlugin.class.getName());
+
 
     private OnlineDictionaryPlugin() { }
 
@@ -68,9 +75,9 @@ public final class OnlineDictionaryPlugin {
     public static class OnlineDictionaryMain implements IDictionaryFactory {
         private Language source = null;
         private Language target = null;
-        private static final List<String> supportedDrivers = new ArrayList<>();
+        private static final List<String> SUPPORTED_DRIVERS = new ArrayList<>();
         static {
-            supportedDrivers.add("omegawiki");
+            SUPPORTED_DRIVERS.add("omegawiki");
         }
 
         public OnlineDictionaryMain() { }
@@ -89,7 +96,7 @@ public final class OnlineDictionaryPlugin {
         public boolean isSupportedFile(final File file) {
             if (file.isFile() && file.toPath().endsWith("service.yml")) {
                 OnlineDictionaryService service = getService(file);
-                return service != null && supportedDrivers.contains(service.getDriver());
+                return service != null && SUPPORTED_DRIVERS.contains(service.getDriver());
             }
             return false;
         }
@@ -143,11 +150,6 @@ public final class OnlineDictionaryPlugin {
                 }
             }
             return articles;
-        }
-
-        @Override
-        public List<DictionaryEntry> readArticlesPredictive(final String word) throws Exception {
-            return null;
         }
     }
 }
