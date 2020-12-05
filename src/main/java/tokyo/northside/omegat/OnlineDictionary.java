@@ -20,18 +20,13 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
 package tokyo.northside.omegat;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import org.omegat.core.Core;
-import org.omegat.core.CoreEvents;
-import org.omegat.core.dictionaries.DictionaryEntry;
 import org.omegat.core.dictionaries.IDictionary;
 import org.omegat.core.dictionaries.IDictionaryFactory;
-import org.omegat.core.events.IApplicationEventListener;
 import org.omegat.util.Language;
 
 
@@ -40,17 +35,14 @@ import org.omegat.util.Language;
  */
 public class OnlineDictionary implements IDictionaryFactory {
 
-    /**
-     * load plugin.
-     */
-    public static void loadPlugins() {
-        CoreEvents.registerApplicationEventListener(new OnlineDictionaryApplicationEventListener());
-    }
+    private Language source = null;
+    private Language target = null;
 
-    /**
-     * unload plugin.
-     */
-    public static void unloadPlugins() {
+    public OnlineDictionary() {}
+
+    public OnlineDictionary(final Language source, final Language target) {
+        this.source = source;
+        this.target = target;
     }
 
     /**
@@ -59,76 +51,39 @@ public class OnlineDictionary implements IDictionaryFactory {
      * @return true when supported, otherwise false.
      */
     @Override
-    public boolean isSupportedFile(File file) {
-        if (file.toPath().endsWith("service.yml")) {
-            return true;
+    public boolean isSupportedFile(final File file) {
+        if (file.isFile()) {
+            if (file.toPath().endsWith("service.yml")) {
+                return true;
+            }
         }
         return false;
     }
 
     @Override
-    public IDictionary loadDict(File file) throws Exception {
-        Language source = Core.getProject().getProjectProperties().getSourceLanguage();
-        Language target = Core.getProject().getProjectProperties().getTargetLanguage();
+    public IDictionary loadDict(final File file) throws Exception {
+        if (source == null) {
+            source = Core.getProject().getProjectProperties().getSourceLanguage();
+            target = Core.getProject().getProjectProperties().getTargetLanguage();
+        }
+        try {
+            OnlineDictionaryService service = getService(file);
+            return new OnlineDictionaryDictionary(service, source, target);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return null;
+        }
+    }
+
+    protected OnlineDictionaryService getService(final File file) {
+        OnlineDictionaryService service;
         ObjectMapper om = new ObjectMapper(new YAMLFactory());
         try {
-            OnlineDictionaryService[] services = om.readValue(file, OnlineDictionaryService[].class);
-            return new OnlineDictionaryDictionary(services, source, target);
-        } catch (Exception ignored) {
+            service = om.readValue(file, OnlineDictionaryService.class);
+        } catch (Exception exception) {
+            exception.printStackTrace();
             return null;
         }
+        return service;
     }
-
-    public class OnlineDictionaryService {
-
-        public OnlineDictionaryService (final String name, final String endpointUrl, final String driver) {
-            this.name = name;
-            this.endpointUrl = endpointUrl;
-            this.driver = driver;
-        }
-
-        public OnlineDictionaryService() {}
-
-        private String name;
-        private String endpointUrl;
-        private String driver;
-    }
-
-    public class OnlineDictionaryDictionary implements IDictionary {
-        private Language source;
-        private Language target;
-        private List<IOnlineDictionaryDriver> drivers = new ArrayList<>();
-
-        public OnlineDictionaryDictionary(final OnlineDictionaryService[] services,
-                                          final Language source, final Language target) {
-            this.source = source;
-            this.target = target;
-
-            for (OnlineDictionaryService srv: services) {
-
-            }
-        }
-
-        @Override
-        public List<DictionaryEntry> readArticles(String word) throws Exception {
-            return null;
-        }
-
-        @Override
-        public List<DictionaryEntry> readArticlesPredictive(String word) throws Exception {
-            return null;
-        }
-    }
-
-    static class OnlineDictionaryApplicationEventListener implements IApplicationEventListener {
-        @Override
-        public void onApplicationStartup() {
-            Core.getDictionaries().addDictionaryFactory(new OnlineDictionary());
-        }
-
-        @Override
-        public void onApplicationShutdown() {
-        }
-    }
-
 }
