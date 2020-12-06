@@ -1,7 +1,9 @@
 package tokyo.northside.omegat.onlinedictionary.drivers
 
-import org.junit.jupiter.api.Test
 import org.omegat.util.Language
+import org.junit.Test
+
+import static org.junit.Assert.*
 
 
 class OxfordDriverTest {
@@ -15,5 +17,12 @@ class OxfordDriverTest {
         OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("es"))
         def results = driver.queryEntries("ace")
         assertEquals("ace", results.get(0).getWord())
+    }
+
+    @Test
+    void interfaceTest() {
+        OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("ja"))
+        def text = driver.readDefinition("ace")
+        assertNotEqual("", text)
     }
 }

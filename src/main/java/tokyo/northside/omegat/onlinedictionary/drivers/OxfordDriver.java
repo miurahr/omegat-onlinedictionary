@@ -21,13 +21,17 @@ package tokyo.northside.omegat.onlinedictionary.drivers;
 
 import org.omegat.util.Language;
 import tokyo.northside.omegat.utils.QueryUtil;
+import tokyo.northside.oxfordapi.dtd.Entry;
 import tokyo.northside.oxfordapi.dtd.LexicalEntry;
 import tokyo.northside.oxfordapi.dtd.Result;
 import tokyo.northside.oxfordapi.OxfordDictionaryEntryParser;
+import tokyo.northside.oxfordapi.dtd.Sense;
 
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class OxfordDriver implements IOnlineDictionaryDriver {
@@ -54,8 +58,18 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
     @Override
     public List<String> readDefinition(final String word) {
         List<Result> results = queryEntries(word);
-        List<String> definitions = results.stream().map(Result::getLexicalEntries).flatMap(Collection::stream)
-                .map(LexicalEntry::getText).collect(Collectors.toList());
+        List<String> definitions = new ArrayList<>();
+        for (Result result : results) {
+            for (LexicalEntry lexicalEntry : result.getLexicalEntries()) {
+                for (Entry entry: lexicalEntry.getEntries()) {
+                    for (Sense sense: entry.getSenses()) {
+                        for (String text: sense.getDefinitions()) {
+                            definitions.add(text);
+                        }
+                    }
+                }
+            }
+        }
         return definitions;
     }
 
