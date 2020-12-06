@@ -21,14 +21,13 @@ package tokyo.northside.omegat.onlinedictionary.drivers;
 
 import org.omegat.util.Language;
 import tokyo.northside.omegat.utils.QueryUtil;
-import tokyo.northside.oxfordapi.dtd.Results;
+import tokyo.northside.oxfordapi.dtd.LexicalEntry;
+import tokyo.northside.oxfordapi.dtd.Result;
 import tokyo.northside.oxfordapi.OxfordDictionaryEntryParser;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class OxfordDriver implements IOnlineDictionaryDriver {
@@ -54,7 +53,10 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
 
     @Override
     public List<String> readDefinition(final String word) {
-        return null;
+        List<Result> results = queryEntries(word);
+        List<String> definitions = results.stream().map(Result::getLexicalEntries).flatMap(Collection::stream)
+                .map(LexicalEntry::getText).collect(Collectors.toList());
+        return definitions;
     }
 
     @Override
@@ -82,22 +84,18 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         return header;
     }
 
-    private List<String> queryDefinition(final String word) {
-        List<String> definitions = new ArrayList<>();
+    protected List<Result> queryEntries(final String word) {
         String requestUrl = getRequestUrl(word, false);
         Map<String, Object> header = getHeaderEntries();
         String response = QueryUtil.query(requestUrl, header);
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser(word);
         try {
             parser.parse(response);
-            List<Results> result = parser.getResults();
-            for (Results entry: result) {
-                String language = entry.getLanguage();
-                // TODO: implement me.
-            }
+            List<Result> results = parser.getResults();
+            return results;
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return definitions;
+        return new ArrayList<>();
     }
 }

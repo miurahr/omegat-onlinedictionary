@@ -1,8 +1,7 @@
-package tokyo.northside.omegat.onlinedictionary
+package tokyo.northside.omegat.onlinedictionary.drivers
 
 import org.omegat.util.Language
 import org.junit.Test
-import tokyo.northside.omegat.onlinedictionary.drivers.OmegawikiDriver
 import tokyo.northside.omegat.utils.QueryUtil
 
 import static org.junit.Assert.*

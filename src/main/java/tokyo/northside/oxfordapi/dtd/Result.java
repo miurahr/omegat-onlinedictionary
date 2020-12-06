@@ -2,7 +2,7 @@ package tokyo.northside.oxfordapi.dtd;
 
 import java.util.List;
 
-public class Results {
+public class Result {
     private String id;
     private String language;
     private List<LexicalEntry> lexicalEntries;
