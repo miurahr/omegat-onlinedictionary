@@ -17,10 +17,13 @@ class ExpressionParserTest {
         ObjectMapper mapper = new ObjectMapper()
         JsonNode node = mapper.readTree(json)
         Map<String, OmegawikiDefinition> definitions = mapper.readValue(node.traverse(),
-                new TypeReference<Map<String, OmegawikiDefinition>>() {
-                })
-        //assertEquals( "{ow_define_1=Definition{dmid=6692, langid=87, lang='español', definition={spelling='tattle', langid=85, lang='English', text='To tell what others do wrong.'}}, ow_define_2=Definition{dmid=751478, langid=87, lang='español', definition={spelling='accuse', langid=85, lang='English', text='To lay a charge against; bring an accusation against.'}}, ow_define_3=Definition{dmid=819321, langid=87, lang='español', definition={spelling='arraign', langid=85, lang='English', text='To bring before a court to answer to an indictment.'}}, ow_define_4=Definition{dmid=837820, langid=87, lang='español', definition={spelling='betray', langid=85, lang='English', text='To give away information about somebody.'}}, ow_define_5=Definition{dmid=1503181, langid=87, lang='español', definition={spelling='charge', langid=85, lang='English', text='To blame for, make a claim of wrongdoing against.'}}, ow_define_6=Definition{dmid=1556344, langid=87, lang='español', definition={spelling='indict', langid=85, lang='English', text='To accuse formally of a crime.'}}}",
-        //        definitions.toString())
+                new TypeReference<Map<String, OmegawikiDefinition>>() { })
+        assertEquals("Definition{dmid=6692, langid=87, lang='español', definition={spelling='tattle', langid=85, lang='English', text='To tell what others do wrong.'}}", definitions.get("ow_define_1").toString())
+        assertEquals("Definition{dmid=751478, langid=87, lang='español', definition={spelling='accuse', langid=85, lang='English', text='To lay a charge against; bring an accusation against.'}}", definitions.get("ow_define_2").toString())
+        assertEquals("Definition{dmid=819321, langid=87, lang='español', definition={spelling='arraign', langid=85, lang='English', text='To bring before a court to answer to an indictment.'}}", definitions.get("ow_define_3").toString())
+        assertEquals("Definition{dmid=837820, langid=87, lang='español', definition={spelling='betray', langid=85, lang='English', text='To give away information about somebody.'}}", definitions.get("ow_define_4").toString())
+        assertEquals("Definition{dmid=1503181, langid=87, lang='español', definition={spelling='charge', langid=85, lang='English', text='To blame for, make a claim of wrongdoing against.'}}", definitions.get("ow_define_5").toString())
+        assertEquals("Definition{dmid=1556344, langid=87, lang='español', definition={spelling='indict', langid=85, lang='English', text='To accuse formally of a crime.'}}", definitions.get("ow_define_6").toString())
     }
 
     @Test

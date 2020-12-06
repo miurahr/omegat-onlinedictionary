@@ -17,19 +17,19 @@ class SyntransParserTest {
         JsonNode node = mapper.readTree(json)
         Map.Entry<String, JsonNode> entry = node.fields().next()
         String key = entry.getKey()
-        assertEquals(key, "1.")
+        assertEquals("1.", key)
         JsonNode meaning = entry.getValue()
         OmegawikiMeaning omegawikiMeaning = mapper.readValue(meaning.traverse(), OmegawikiMeaning.class)
-        assertEquals(omegawikiMeaning.toString(), "{langid='84', lang='Bulgarian', e='\u0430\u0437\u0431\u0443\u043a\u0430', im='1'}")
+        assertEquals("{langid='84', lang='Bulgarian', e='\u0430\u0437\u0431\u0443\u043a\u0430', im='1'}", omegawikiMeaning.toString())
     }
 
     @Test
     void parseSyntransTest() throws IOException{
-        InputStream resource = SyntransParser.class.getClassLoader().getResourceAsStream("syntrans_result.json")
+        InputStream resource = SyntransParser.class.getClassLoader().getResourceAsStream("omegawiki/syntrans_result.json")
         String json = IOUtils.toString(resource, "UTF-8")
         SyntransParser parser = new SyntransParser()
         parser.parse(json)
         List<OmegawikiMeaning> meanings = parser.getMeanings()
-        assertEquals(meanings.get(0).getE(), "азбука")
+        assertEquals("азбука", meanings.get(0).getE())
     }
 }

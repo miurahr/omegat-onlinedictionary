@@ -17,9 +17,11 @@ class OnlineDictionaryServiceYamlTest {
     @Test
     void readYamlTest() throws Exception {
         ObjectMapper om = new ObjectMapper(new YAMLFactory());
-        def services = om.readValue(new File(resource.toURI()), OnlineDictionaryService.class);
-        assertEquals(services.getName(), "omegawiki")
-        assertEquals(services.getDriver(), "omegawiki")
-        assertEquals(services.getEndpointUrl(), "http://omegawiki.org/api.php")
+        def service = om.readValue(new File(resource.toURI()), OnlineDictionaryService.class);
+        assertEquals("omegawiki", service.getName())
+        assertEquals("omegawiki", service.getDriver())
+        assertEquals("http://omegawiki.org/api.php", service.getEndpointUrl())
+        assertEquals("abc", service.getKey())
+        assertEquals("123", service.getSecret())
     }
 }

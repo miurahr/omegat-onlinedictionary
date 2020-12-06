@@ -21,8 +21,8 @@ class OnlineDictionaryMainTest {
     @Test
     void onlineDictionaryGetServices() {
         def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("es"))
-        def services = onlineDictionary.getService(new File(resource.toURI()))
-        assertNotNull(services)
+        def service = onlineDictionary.getService(new File(resource.toURI()))
+        assertNotNull(service)
     }
 
     @Test

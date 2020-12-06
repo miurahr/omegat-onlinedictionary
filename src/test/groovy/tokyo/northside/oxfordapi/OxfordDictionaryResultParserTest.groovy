@@ -9,7 +9,7 @@ import static org.junit.Assert.*
 class OxfordDictionaryResultParserTest {
     @Test
     void testParse1() {
-        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result.json")
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi/entry_result1.json")
         String json = IOUtils.toString(resource, "UTF-8")
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("ace")
         parser.parse(json)
@@ -21,7 +21,7 @@ class OxfordDictionaryResultParserTest {
 
     @Test
     void testParse2() {
-        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result2.json")
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi/entry_result2.json")
         String json = IOUtils.toString(resource, "UTF-8")
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("software")
         parser.parse(json)
@@ -33,7 +33,7 @@ class OxfordDictionaryResultParserTest {
 
     @Test
     void testParse3() {
-        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result3.json")
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi/entry_result3.json")
         String json = IOUtils.toString(resource, "UTF-8")
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("software")
         parser.parse(json)
@@ -45,7 +45,7 @@ class OxfordDictionaryResultParserTest {
 
     @Test
     void testParse4() {
-        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result4.json")
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi/entry_result4.json")
         String json = IOUtils.toString(resource, "UTF-8")
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("freedom")
         parser.parse(json)
@@ -57,7 +57,7 @@ class OxfordDictionaryResultParserTest {
 
     @Test
     void testParse5() {
-        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result5.json")
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi/entry_result5.json")
         String json = IOUtils.toString(resource, "UTF-8")
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("documentation")
         parser.parse(json)
