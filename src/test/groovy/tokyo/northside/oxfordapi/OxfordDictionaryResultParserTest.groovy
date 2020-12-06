@@ -20,7 +20,7 @@ class OxfordDictionaryResultParserTest {
     }
 
     @Test
-    void testPars22() {
+    void testParse2() {
         InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result2.json")
         String json = IOUtils.toString(resource, "UTF-8")
         OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("software")
@@ -28,6 +28,30 @@ class OxfordDictionaryResultParserTest {
         List<Result> result = parser.getResults()
         Result entry = result.get(0)
         assertEquals("software", entry.getId())
+
+    }
+
+    @Test
+    void testParse3() {
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result3.json")
+        String json = IOUtils.toString(resource, "UTF-8")
+        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("software")
+        parser.parse(json)
+        List<Result> result = parser.getResults()
+        Result entry = result.get(0)
+        assertEquals("advocate", entry.getId())
+
+    }
+
+    @Test
+    void testParse4() {
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result4.json")
+        String json = IOUtils.toString(resource, "UTF-8")
+        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("software")
+        parser.parse(json)
+        List<Result> result = parser.getResults()
+        Result entry = result.get(0)
+        assertEquals("freedom", entry.getId())
 
     }
 

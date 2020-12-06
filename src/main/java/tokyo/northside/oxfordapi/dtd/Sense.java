@@ -24,6 +24,8 @@ public class Sense {
     private List<CrossReference> crossReferences;
     @JsonIgnore
     private List<Inflection> inflections;
+    @JsonIgnore
+    private List<Construction> constructions;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -127,6 +129,22 @@ public class Sense {
 
     public void setCrossReferences(List<CrossReference> crossReferences) {
         this.crossReferences = crossReferences;
+    }
+
+    public List<Inflection> getInflections() {
+        return inflections;
+    }
+
+    public void setInflections(List<Inflection> inflections) {
+        this.inflections = inflections;
+    }
+
+    public List<Construction> getConstructions() {
+        return constructions;
+    }
+
+    public void setConstructions(List<Construction> constructions) {
+        this.constructions = constructions;
     }
 
     @Override

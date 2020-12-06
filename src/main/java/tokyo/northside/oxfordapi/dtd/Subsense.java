@@ -1,5 +1,7 @@
 package tokyo.northside.oxfordapi.dtd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 public class Subsense {
@@ -13,6 +15,12 @@ public class Subsense {
     private List<Register> registers;
     private List<Region> regions;
     private List<Note> notes;
+    @JsonIgnore
+    private List<Synonym> synonyms;
+    @JsonIgnore
+    private List<ThesaurusLink> thesaurusLinks;
+    @JsonIgnore
+    private List<Construction> constructions;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -92,6 +100,30 @@ public class Subsense {
 
     public void setNotes(List<Note> notes) {
         this.notes = notes;
+    }
+
+    public List<Synonym> getSynonyms() {
+        return synonyms;
+    }
+
+    public void setSynonyms(List<Synonym> synonyms) {
+        this.synonyms = synonyms;
+    }
+
+    public List<ThesaurusLink> getThesaurusLinks() {
+        return thesaurusLinks;
+    }
+
+    public void setThesaurusLinks(List<ThesaurusLink> thesaurusLinks) {
+        this.thesaurusLinks = thesaurusLinks;
+    }
+
+    public List<Construction> getConstructions() {
+        return constructions;
+    }
+
+    public void setConstructions(List<Construction> constructions) {
+        this.constructions = constructions;
     }
 
     @Override

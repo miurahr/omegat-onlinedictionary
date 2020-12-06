@@ -12,6 +12,8 @@ public class LexicalEntry {
     private String text;
     @JsonIgnore
     private LexicalCategory lexicalCategory;
+    @JsonIgnore
+    private List<Derivative> derivatives;
     private List<Phrase> phrases;
 
     public List<Compound> getCompounds() {
@@ -60,6 +62,14 @@ public class LexicalEntry {
 
     public void setPhrases(List<Phrase> phrases) {
         this.phrases = phrases;
+    }
+
+    public List<Derivative> getDerivatives() {
+        return derivatives;
+    }
+
+    public void setDerivatives(List<Derivative> derivatives) {
+        this.derivatives = derivatives;
     }
 
     @Override

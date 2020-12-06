@@ -1,0 +1,386 @@
+{
+  "id": "advocate",
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": [
+    {
+      "id": "advocate",
+      "language": "en-us",
+      "lexicalEntries": [
+        {
+          "derivatives": [
+            {
+              "id": "advocateship",
+              "text": "advocateship"
+            },
+            {
+              "id": "advocation",
+              "text": "advocation"
+            },
+            {
+              "id": "advocator",
+              "text": "advocator"
+            }
+          ],
+          "entries": [
+            {
+              "etymologies": [
+                "Middle English: from Old French avocat, from Latin advocatus, past participle (used as a noun) of advocare ‘call (to one's aid)’, from ad- ‘to’ + vocare ‘to call’"
+              ],
+              "pronunciations": [
+                {
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "respell",
+                  "phoneticSpelling": "ˈadvəkət"
+                },
+                {
+                  "audioFile": "https://audio.oxforddictionaries.com/en/mp3/advocate_us_2.mp3",
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "IPA",
+                  "phoneticSpelling": "ˈædvəkət"
+                }
+              ],
+              "senses": [
+                {
+                  "constructions": [
+                    {
+                      "text": "advocate of"
+                    }
+                  ],
+                  "definitions": [
+                    "a person who publicly supports or recommends a particular cause or policy"
+                  ],
+                  "examples": [
+                    {
+                      "text": "he was an untiring advocate of economic reform"
+                    }
+                  ],
+                  "id": "m_en_gbus0012420.014",
+                  "semanticClasses": [
+                    {
+                      "id": "advocate",
+                      "text": "Advocate"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "supporter of cause"
+                  ],
+                  "subsenses": [
+                    {
+                      "definitions": [
+                        "a person who pleads on someone else's behalf"
+                      ],
+                      "examples": [
+                        {
+                          "text": "care managers can become advocates for their clients"
+                        }
+                      ],
+                      "id": "m_en_gbus0012420.017",
+                      "semanticClasses": [
+                        {
+                          "id": "advocate",
+                          "text": "Advocate"
+                        }
+                      ],
+                      "shortDefinitions": [
+                        "person representing another"
+                      ]
+                    },
+                    {
+                      "definitions": [
+                        "a pleader in a court of law; a lawyer"
+                      ],
+                      "domainClasses": [
+                        {
+                          "id": "law",
+                          "text": "Law"
+                        }
+                      ],
+                      "examples": [
+                        {
+                          "text": "Marshall was a skilled advocate but a mediocre judge"
+                        }
+                      ],
+                      "id": "m_en_gbus0012420.018",
+                      "semanticClasses": [
+                        {
+                          "id": "lawyer",
+                          "text": "Lawyer"
+                        }
+                      ],
+                      "shortDefinitions": [
+                        "pleader in court"
+                      ],
+                      "synonyms": [
+                        {
+                          "language": "en",
+                          "text": "barrister"
+                        },
+                        {
+                          "language": "en",
+                          "text": "lawyer"
+                        },
+                        {
+                          "language": "en",
+                          "text": "counsel"
+                        },
+                        {
+                          "language": "en",
+                          "text": "counsellor"
+                        },
+                        {
+                          "language": "en",
+                          "text": "professional pleader"
+                        },
+                        {
+                          "language": "en",
+                          "text": "legal practitioner"
+                        }
+                      ],
+                      "thesaurusLinks": [
+                        {
+                          "entry_id": "advocate",
+                          "sense_id": "t_en_gb0000321.002"
+                        }
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "language": "en",
+                      "text": "champion"
+                    },
+                    {
+                      "language": "en",
+                      "text": "upholder"
+                    },
+                    {
+                      "language": "en",
+                      "text": "supporter"
+                    },
+                    {
+                      "language": "en",
+                      "text": "backer"
+                    },
+                    {
+                      "language": "en",
+                      "text": "promoter"
+                    },
+                    {
+                      "language": "en",
+                      "text": "proponent"
+                    },
+                    {
+                      "language": "en",
+                      "text": "exponent"
+                    },
+                    {
+                      "language": "en",
+                      "text": "protector"
+                    },
+                    {
+                      "language": "en",
+                      "text": "patron"
+                    }
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "advocate",
+                      "sense_id": "t_en_gb0000321.001"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en-us",
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          },
+          "text": "advocate"
+        },
+        {
+          "derivatives": [
+            {
+              "id": "advocateship",
+              "text": "advocateship"
+            },
+            {
+              "id": "advocation",
+              "text": "advocation"
+            },
+            {
+              "id": "advocator",
+              "text": "advocator"
+            }
+          ],
+          "entries": [
+            {
+              "grammaticalFeatures": [
+                {
+                  "id": "transitive",
+                  "text": "Transitive",
+                  "type": "Subcategorization"
+                }
+              ],
+              "pronunciations": [
+                {
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "respell",
+                  "phoneticSpelling": "ˈadvəˌkāt"
+                },
+                {
+                  "audioFile": "https://audio.oxforddictionaries.com/en/mp3/advocate_us_1.mp3",
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "IPA",
+                  "phoneticSpelling": "ˈædvəˌkeɪt"
+                }
+              ],
+              "senses": [
+                {
+                  "definitions": [
+                    "publicly recommend or support"
+                  ],
+                  "examples": [
+                    {
+                      "text": "they advocated an ethical foreign policy"
+                    }
+                  ],
+                  "id": "m_en_gbus0012420.023",
+                  "shortDefinitions": [
+                    "recommend/support"
+                  ],
+                  "synonyms": [
+                    {
+                      "language": "en",
+                      "text": "recommend"
+                    },
+                    {
+                      "language": "en",
+                      "text": "prescribe"
+                    },
+                    {
+                      "language": "en",
+                      "text": "commend"
+                    },
+                    {
+                      "language": "en",
+                      "text": "advise"
+                    },
+                    {
+                      "language": "en",
+                      "text": "favour"
+                    },
+                    {
+                      "language": "en",
+                      "text": "approve of"
+                    },
+                    {
+                      "language": "en",
+                      "text": "support"
+                    },
+                    {
+                      "language": "en",
+                      "text": "back"
+                    },
+                    {
+                      "language": "en",
+                      "text": "uphold"
+                    },
+                    {
+                      "language": "en",
+                      "text": "subscribe to"
+                    },
+                    {
+                      "language": "en",
+                      "text": "champion"
+                    },
+                    {
+                      "language": "en",
+                      "text": "campaign on behalf of"
+                    },
+                    {
+                      "language": "en",
+                      "text": "stand up for"
+                    },
+                    {
+                      "language": "en",
+                      "text": "speak for"
+                    },
+                    {
+                      "language": "en",
+                      "text": "argue for"
+                    },
+                    {
+                      "language": "en",
+                      "text": "plead for"
+                    },
+                    {
+                      "language": "en",
+                      "text": "press for"
+                    },
+                    {
+                      "language": "en",
+                      "text": "lobby for"
+                    },
+                    {
+                      "language": "en",
+                      "text": "urge"
+                    },
+                    {
+                      "language": "en",
+                      "text": "promote"
+                    },
+                    {
+                      "language": "en",
+                      "text": "espouse"
+                    },
+                    {
+                      "language": "en",
+                      "text": "endorse"
+                    },
+                    {
+                      "language": "en",
+                      "text": "sanction"
+                    },
+                    {
+                      "language": "en",
+                      "text": "vouch for"
+                    }
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "advocate",
+                      "sense_id": "t_en_gb0000321.003"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en-us",
+          "lexicalCategory": {
+            "id": "verb",
+            "text": "Verb"
+          },
+          "text": "advocate"
+        }
+      ],
+      "type": "headword",
+      "word": "advocate"
+    }
+  ],
+  "word": "advocate"
+}
