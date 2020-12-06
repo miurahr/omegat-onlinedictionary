@@ -8,6 +8,8 @@ public class Example {
     @JsonIgnore
     private List<Register> registers;
     private String text;
+    @JsonIgnore
+    private List<Note> notes;
 
     public List<Register> getRegisters() {
         return registers;
@@ -25,8 +27,16 @@ public class Example {
         this.text = text;
     }
 
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+    }
+
     @Override
     public String toString() {
-        return "Example{" + "registers=" + registers + ", text='" + text + '\'' + '}';
+        return "Example{" + "registers=" + registers + ", text='" + text + '\'' + ", notes=" + notes + '}';
     }
 }
