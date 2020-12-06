@@ -136,6 +136,8 @@ public final class OnlineDictionaryPlugin {
                                 final Language source, final Language target) throws Exception {
             if ("omegawiki".equals(service.getName())) {
                 drivers.add(new OmegawikiDriver(service.getEndpointUrl(), source, target));
+            } else if ("oxford".equals(service.getName())) {
+                drivers.add(new OxfordDriver(service.getEndpointUrl(), source, target));
             } else {
                 throw new Exception("Unknown driver");
             }

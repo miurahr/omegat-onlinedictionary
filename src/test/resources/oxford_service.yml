@@ -1,0 +1,4 @@
+---
+name: oxford dictionary api
+endpointUrl: https://od-api.oxforddictionaries.com/api/v2/
+driver: oxford
