@@ -21,10 +21,9 @@ class OmegawikiDriverTest {
 
     @Test
     void getQueryTest() {
-        def driver = new OmegawikiDriver(endpointUrl, new Language("en"), new Language("es"))
         def word = "translate"
         def queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
-        def result = driver.query(queryUrl)
+        def result = QueryUtil.query(queryUrl, new HashMap<String, Object>())
         assertNotNull(result)
     }
 

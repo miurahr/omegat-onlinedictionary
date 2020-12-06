@@ -23,15 +23,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import org.apache.hc.client5.http.ClientProtocolException;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.core5.http.HttpStatus;
-import org.apache.hc.core5.http.ParseException;
-import org.apache.hc.core5.http.io.HttpClientResponseHandler;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.omegat.util.Language;
 
 import tokyo.northside.omegawiki.ExpressionParser;
@@ -39,9 +30,16 @@ import tokyo.northside.omegawiki.OmegawikiMeaning;
 import tokyo.northside.omegawiki.OmegawikiDefinition;
 import tokyo.northside.omegawiki.SyntransParser;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
 
 public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
@@ -112,7 +110,7 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
             for (OmegawikiEntry entry : cache.getValues(word)) {
                 String dmid = entry.getDmid();
                 String queryUrl = queryUrlBase.concat(dmid);
-                String resultJson = query(queryUrl);
+                String resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
                 SyntransParser parser = new SyntransParser();
                 try {
                     parser.parse(resultJson);
@@ -130,7 +128,7 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
     protected List<OmegawikiDefinition> queryExpression(final String word) {
         String queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
-        String resultJson = query(queryUrl);
+        String resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
         ExpressionParser omegawikiParser = new ExpressionParser();
         try {
             omegawikiParser.parse(resultJson);
@@ -145,32 +143,5 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
             e.printStackTrace();
         }
         return new ArrayList<>();
-
-    }
-
-    protected String query(final String queryUrl) {
-        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpGet httpGet = new HttpGet(queryUrl);
-            final HttpClientResponseHandler<String> responseHandler = response -> {
-                final int status = response.getCode();
-                if (status >= HttpStatus.SC_SUCCESS && status < HttpStatus.SC_REDIRECTION) {
-                    try (HttpEntity entity = response.getEntity()) {
-                        if (entity != null) {
-                            return EntityUtils.toString(entity);
-                        } else {
-                            return null;
-                        }
-                    } catch (final ParseException ex) {
-                        throw new ClientProtocolException(ex);
-                    }
-                } else {
-                    throw new ClientProtocolException("Unexpected response status: " + status);
-                }
-            };
-            return httpclient.execute(httpGet, responseHandler);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

@@ -25,14 +25,13 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-core:2.12.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.12.0'
     compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.0'
-    // OmegaWiki JSON Parser
-    compile fileTree(dir: 'libs', include: '*.jar')
     compileOnly 'org.omegat:omegat:5.2.0'
     compileOnly 'commons-io:commons-io:2.5'
     compileOnly 'commons-lang:commons-lang:2.6'
     // Test with Groovy JUnit5
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.0'
     testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.0'
+    testImplementation 'commons-io:commons-io:2.5'
     testImplementation 'org.omegat:omegat:5.2.0'
     testImplementation "org.codehaus.groovy:groovy-all:3.0.1"
 }
