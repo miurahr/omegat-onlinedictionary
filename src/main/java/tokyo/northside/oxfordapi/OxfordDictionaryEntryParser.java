@@ -8,12 +8,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntryParser {
+import tokyo.northside.oxfordapi.dtd.Results;
+
+
+public class OxfordDictionaryEntryParser {
 
     private String word;
-    private List<Entry> results = new ArrayList<>();
+    private List<Results> results = new ArrayList<>();
 
-    public EntryParser(final String word) {
+    public OxfordDictionaryEntryParser(final String word) {
         this.word = word;
     }
 
@@ -21,7 +24,7 @@ public class EntryParser {
         return word;
     }
 
-    public List<Entry> getResults() {
+    public List<Results> getResults() {
         return results;
     }
 
@@ -29,7 +32,7 @@ public class EntryParser {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode node = mapper.readTree(json);
         node = node.get("results");
-        results = mapper.readValue(node.traverse(), new TypeReference<List<Entry>>() {
+        results = mapper.readValue(node.traverse(), new TypeReference<List<Results>>() {
         });
     }
 }

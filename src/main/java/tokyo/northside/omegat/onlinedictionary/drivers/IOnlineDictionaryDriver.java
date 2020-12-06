@@ -17,7 +17,7 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-package tokyo.northside.omegat;
+package tokyo.northside.omegat.onlinedictionary.drivers;
 
 import java.util.List;
 

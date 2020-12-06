@@ -17,7 +17,7 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-package tokyo.northside.omegat;
+package tokyo.northside.omegat.onlinedictionary;
 
 public class OnlineDictionaryService {
     private String name;
@@ -38,7 +38,7 @@ public class OnlineDictionaryService {
         return key;
     }
 
-    public void setKey(String key) {
+    public void setKey(final String key) {
         this.key = key;
     }
 
@@ -46,7 +46,7 @@ public class OnlineDictionaryService {
         return secret;
     }
 
-    public void setSecret(String secret) {
+    public void setSecret(final String secret) {
         this.secret = secret;
     }
 

@@ -1,4 +1,4 @@
-package tokyo.northside.omegawiki;
+package tokyo.northside.omegawiki.dtd;
 
 public class Definition {
     private String spelling;

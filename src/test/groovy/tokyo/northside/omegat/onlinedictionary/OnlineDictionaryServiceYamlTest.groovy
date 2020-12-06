@@ -1,9 +1,12 @@
-package tokyo.northside.omegat
+package tokyo.northside.omegat.onlinedictionary
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 
 import org.junit.Test
+import tokyo.northside.omegat.onlinedictionary.OnlineDictionaryPlugin
+import tokyo.northside.omegat.onlinedictionary.OnlineDictionaryService
+
 import static org.junit.Assert.*
 
 

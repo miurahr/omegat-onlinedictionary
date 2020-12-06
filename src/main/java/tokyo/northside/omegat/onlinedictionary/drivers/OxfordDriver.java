@@ -17,11 +17,12 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-package tokyo.northside.omegat;
+package tokyo.northside.omegat.onlinedictionary.drivers;
 
 import org.omegat.util.Language;
-import tokyo.northside.oxfordapi.Entry;
-import tokyo.northside.oxfordapi.EntryParser;
+import tokyo.northside.omegat.utils.QueryUtil;
+import tokyo.northside.oxfordapi.dtd.Results;
+import tokyo.northside.oxfordapi.OxfordDictionaryEntryParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,14 +32,17 @@ import java.util.Map;
 
 
 public class OxfordDriver implements IOnlineDictionaryDriver {
-    private final String appId = "<my_app_id>";
-    private final String appKey = "<my_app_key>";
+    private final String appId;
+    private final String appKey;
     private final String endpointUrl;
     private final Language source;
     private final Language target;
 
-    public OxfordDriver(final String endpointUrl, final Language source, final Language target) {
+    public OxfordDriver(final String endpointUrl, final String key, final String secret,
+                        final Language source, final Language target) {
         this.endpointUrl = endpointUrl;
+        this.appId = key;
+        this.appKey = secret;
         this.source = source;
         this.target = target;
     }
@@ -67,8 +71,7 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         }
         final String wordId = word.toLowerCase();
         String language = source.getLanguageCode();
-        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + wordId
-                + "?" + "&strictMatch=" + strictMatch;
+        return endpointUrl + "entries/" + language + "/" + wordId + "?" + "&strictMatch=" + strictMatch;
     }
 
     private Map<String, Object> getHeaderEntries() {
@@ -84,10 +87,14 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         String requestUrl = getRequestUrl(word, false);
         Map<String, Object> header = getHeaderEntries();
         String response = QueryUtil.query(requestUrl, header);
-        EntryParser parser = new EntryParser(word);
+        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser(word);
         try {
             parser.parse(response);
-            List<Entry> result = parser.getResults();
+            List<Results> result = parser.getResults();
+            for (Results entry: result) {
+                String language = entry.getLanguage();
+                // TODO: implement me.
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -83,7 +83,7 @@ jar {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
     manifest {
-        attributes("OmegaT-Plugins": "tokyo.northside.omegat.OnlineDictionaryPlugin")
+        attributes("OmegaT-Plugins": "tokyo.northside.omegat.onlinedictionary.OnlineDictionaryPlugin")
     }
 }
 artifacts {

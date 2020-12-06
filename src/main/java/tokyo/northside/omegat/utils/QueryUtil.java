@@ -1,4 +1,4 @@
-package tokyo.northside.omegat;
+package tokyo.northside.omegat.utils;
 
 import org.apache.hc.client5.http.ClientProtocolException;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
@@ -12,7 +12,7 @@ import org.apache.hc.core5.http.io.entity.EntityUtils;
 
 import java.util.Map;
 
-final class QueryUtil {
+public final class QueryUtil {
 
     private QueryUtil() { }
 

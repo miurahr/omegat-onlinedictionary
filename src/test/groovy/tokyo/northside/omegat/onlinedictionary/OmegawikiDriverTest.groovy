@@ -1,7 +1,10 @@
-package tokyo.northside.omegat
+package tokyo.northside.omegat.onlinedictionary
 
 import org.omegat.util.Language
 import org.junit.Test
+import tokyo.northside.omegat.onlinedictionary.drivers.OmegawikiDriver
+import tokyo.northside.omegat.utils.QueryUtil
+
 import static org.junit.Assert.*
 
 class OmegawikiDriverTest {

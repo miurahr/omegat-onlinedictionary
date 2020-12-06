@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.commons.io.IOUtils;
 import org.junit.Test
+import tokyo.northside.omegawiki.dtd.OmegawikiMeaning
+
 import static org.junit.Assert.*
 
 class SyntransParserTest {

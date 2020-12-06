@@ -17,7 +17,7 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-package tokyo.northside.omegat;
+package tokyo.northside.omegat.onlinedictionary.drivers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -25,9 +25,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.omegat.util.Language;
 
+import tokyo.northside.omegat.utils.MultiMap;
+import tokyo.northside.omegat.utils.QueryUtil;
 import tokyo.northside.omegawiki.ExpressionParser;
-import tokyo.northside.omegawiki.OmegawikiMeaning;
-import tokyo.northside.omegawiki.OmegawikiDefinition;
+import tokyo.northside.omegawiki.dtd.OmegawikiMeaning;
+import tokyo.northside.omegawiki.dtd.OmegawikiDefinition;
 import tokyo.northside.omegawiki.SyntransParser;
 
 import java.io.BufferedReader;

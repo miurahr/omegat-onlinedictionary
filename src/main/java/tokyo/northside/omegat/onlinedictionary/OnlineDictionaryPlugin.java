@@ -17,7 +17,7 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-package tokyo.northside.omegat;
+package tokyo.northside.omegat.onlinedictionary;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
@@ -32,6 +32,9 @@ import org.omegat.util.Language;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tokyo.northside.omegat.onlinedictionary.drivers.IOnlineDictionaryDriver;
+import tokyo.northside.omegat.onlinedictionary.drivers.OmegawikiDriver;
+import tokyo.northside.omegat.onlinedictionary.drivers.OxfordDriver;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -137,7 +140,8 @@ public final class OnlineDictionaryPlugin {
             if ("omegawiki".equals(service.getName())) {
                 drivers.add(new OmegawikiDriver(service.getEndpointUrl(), source, target));
             } else if ("oxford".equals(service.getName())) {
-                drivers.add(new OxfordDriver(service.getEndpointUrl(), source, target));
+                drivers.add(new OxfordDriver(service.getEndpointUrl(), service.getKey(), service.getSecret(),
+                        source, target));
             } else {
                 throw new Exception("Unknown driver");
             }

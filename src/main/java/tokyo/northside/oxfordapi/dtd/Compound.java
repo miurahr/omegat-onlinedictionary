@@ -1,4 +1,4 @@
-package tokyo.northside.oxfordapi;
+package tokyo.northside.oxfordapi.dtd;
 
 import java.util.List;
 

@@ -3,6 +3,7 @@ package tokyo.northside.omegawiki;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import tokyo.northside.omegawiki.dtd.OmegawikiDefinition;
 
 import java.io.IOException;
 import java.util.ArrayList;

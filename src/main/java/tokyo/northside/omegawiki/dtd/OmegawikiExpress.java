@@ -1,4 +1,4 @@
-package tokyo.northside.omegawiki;
+package tokyo.northside.omegawiki.dtd;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
