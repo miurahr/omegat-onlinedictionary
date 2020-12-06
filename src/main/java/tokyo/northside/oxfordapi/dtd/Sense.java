@@ -18,6 +18,12 @@ public class Sense {
     private List<Register> registers;
     @JsonIgnore
     private List<Region> regions;
+    @JsonIgnore
+    private List<String> crossReferenceMarkers;
+    @JsonIgnore
+    private List<CrossReference> crossReferences;
+    @JsonIgnore
+    private List<Inflection> inflections;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -105,6 +111,22 @@ public class Sense {
 
     public void setRegions(List<Region> regions) {
         this.regions = regions;
+    }
+
+    public List<String> getCrossReferenceMarkers() {
+        return crossReferenceMarkers;
+    }
+
+    public void setCrossReferenceMarkers(List<String> crossReferenceMarkers) {
+        this.crossReferenceMarkers = crossReferenceMarkers;
+    }
+
+    public List<CrossReference> getCrossReferences() {
+        return crossReferences;
+    }
+
+    public void setCrossReferences(List<CrossReference> crossReferences) {
+        this.crossReferences = crossReferences;
     }
 
     @Override

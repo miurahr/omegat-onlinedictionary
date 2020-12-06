@@ -1,0 +1,116 @@
+{
+  "id": "software",
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": [
+    {
+      "id": "software",
+      "language": "en-us",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "pronunciations": [
+                {
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "respell",
+                  "phoneticSpelling": "ˈsôf(t)wer"
+                },
+                {
+                  "audioFile": "https://audio.oxforddictionaries.com/en/mp3/software_us_1.mp3",
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "IPA",
+                  "phoneticSpelling": "ˈsɔf(t)wɛr"
+                }
+              ],
+              "senses": [
+                {
+                  "crossReferenceMarkers": [
+                    "Compare with hardware"
+                  ],
+                  "crossReferences": [
+                    {
+                      "id": "hardware",
+                      "text": "hardware",
+                      "type": "see also"
+                    }
+                  ],
+                  "definitions": [
+                    "the programs and other operating information used by a computer"
+                  ],
+                  "domainClasses": [
+                    {
+                      "id": "computing",
+                      "text": "Computing"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "notes": [
+                        {
+                          "text": "as modifier",
+                          "type": "grammaticalNote"
+                        }
+                      ],
+                      "text": "the software industry"
+                    }
+                  ],
+                  "id": "m_en_gbus0965530.005",
+                  "semanticClasses": [
+                    {
+                      "id": "computer_program",
+                      "text": "Computer_Program"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "programs and other operating information used by computer"
+                  ],
+                  "synonyms": [
+                    {
+                      "language": "en",
+                      "text": "program"
+                    },
+                    {
+                      "language": "en",
+                      "text": "software"
+                    },
+                    {
+                      "language": "en",
+                      "text": "routine"
+                    },
+                    {
+                      "language": "en",
+                      "text": "use"
+                    }
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "application",
+                      "sense_id": "t_en_gb0000709.007"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en-us",
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          },
+          "text": "software"
+        }
+      ],
+      "type": "headword",
+      "word": "software"
+    }
+  ],
+  "word": "software"
+}

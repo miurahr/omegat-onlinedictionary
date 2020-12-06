@@ -10,6 +10,8 @@ public class Example {
     private String text;
     @JsonIgnore
     private List<Note> notes;
+    @JsonIgnore
+    private List<String> senseIds;
 
     public List<Register> getRegisters() {
         return registers;
@@ -33,6 +35,14 @@ public class Example {
 
     public void setNotes(List<Note> notes) {
         this.notes = notes;
+    }
+
+    public List<String> getSenseIds() {
+        return senseIds;
+    }
+
+    public void setSenseIds(List<String> senseIds) {
+        this.senseIds = senseIds;
     }
 
     @Override
