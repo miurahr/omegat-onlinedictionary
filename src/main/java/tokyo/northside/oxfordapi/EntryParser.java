@@ -13,7 +13,7 @@ public class EntryParser {
     private String word;
     private List<Entry> results = new ArrayList<>();
 
-    public EntryParser(String word) {
+    public EntryParser(final String word) {
         this.word = word;
     }
 

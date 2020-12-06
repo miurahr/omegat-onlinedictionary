@@ -10,7 +10,7 @@ public class OmegawikiMeaning {
         return langid;
     }
 
-    public void setLangid(String langid) {
+    public void setLangid(final String langid) {
         this.langid = langid;
     }
 
@@ -18,7 +18,7 @@ public class OmegawikiMeaning {
         return lang;
     }
 
-    public void setLang(String lang) {
+    public void setLang(final String lang) {
         this.lang = lang;
     }
 
@@ -26,7 +26,7 @@ public class OmegawikiMeaning {
         return e;
     }
 
-    public void setE(String e) {
+    public void setE(final String e) {
         this.e = e;
     }
 
@@ -34,17 +34,13 @@ public class OmegawikiMeaning {
         return im;
     }
 
-    public void setIm(String im) {
+    public void setIm(final String im) {
         this.im = im;
     }
 
     @Override
     public String toString() {
-        return "{" +
-                "langid='" + langid + '\'' +
-                ", lang='" + lang + '\'' +
-                ", e='" + e + '\'' +
-                ", im='" + im + '\'' +
-                '}';
+        return "{" + "langid='" + langid + '\'' + ", lang='" + lang + '\''
+                + ", e='" + e + '\'' + ", im='" + im + '\'' + '}';
     }
 }

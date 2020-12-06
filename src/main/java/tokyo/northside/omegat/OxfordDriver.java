@@ -31,8 +31,8 @@ import java.util.Map;
 
 
 public class OxfordDriver implements IOnlineDictionaryDriver {
-    private final String app_id = "<my_app_id>";
-    private final String app_key = "<my_app_key>";
+    private final String appId = "<my_app_id>";
+    private final String appKey = "<my_app_key>";
     private final String endpointUrl;
     private final Language source;
     private final Language target;
@@ -59,18 +59,23 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
     }
 
     private String getRequestUrl(final String word, final boolean strict) {
-        final String strictMatch = strict ? "true" : "false";
-        final String word_id = word.toLowerCase();
+        final String strictMatch;
+        if (strict) {
+            strictMatch = "true";
+        } else {
+            strictMatch = "false";
+        }
+        final String wordId = word.toLowerCase();
         String language = source.getLanguageCode();
-        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + word_id
+        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + wordId
                 + "?" + "&strictMatch=" + strictMatch;
     }
 
     private Map<String, Object> getHeaderEntries() {
         Map<String, Object> header = new HashMap<>();
         header.put("Accept", "application/json");
-        header.put("app_id", app_id);
-        header.put("app_key", app_key);
+        header.put("app_id", appId);
+        header.put("app_key", appKey);
         return header;
     }
 

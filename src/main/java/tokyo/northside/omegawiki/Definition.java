@@ -10,7 +10,7 @@ public class Definition {
         return spelling;
     }
 
-    public void setSpelling(String spelling) {
+    public void setSpelling(final String spelling) {
         this.spelling = spelling;
     }
 
@@ -18,7 +18,7 @@ public class Definition {
         return langid;
     }
 
-    public void setLangid(Integer langid) {
+    public void setLangid(final Integer langid) {
         this.langid = langid;
     }
 
@@ -26,7 +26,7 @@ public class Definition {
         return lang;
     }
 
-    public void setLang(String lang) {
+    public void setLang(final String lang) {
         this.lang = lang;
     }
 
@@ -34,17 +34,13 @@ public class Definition {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(final String text) {
         this.text = text;
     }
 
     @Override
     public String toString() {
-        return "{" +
-                "spelling='" + spelling + '\'' +
-                ", langid=" + langid +
-                ", lang='" + lang + '\'' +
-                ", text='" + text + '\'' +
-                '}';
+        return "{" + "spelling='" + spelling + '\'' + ", langid=" + langid
+                + ", lang='" + lang + '\'' + ", text='" + text + '\'' + '}';
     }
 }

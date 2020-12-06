@@ -7,7 +7,7 @@ public class LexicalEntry {
         return compounds;
     }
 
-    public void setCompounds(List<Compound> compounds) {
+    public void setCompounds(final List<Compound> compounds) {
         this.compounds = compounds;
     }
 

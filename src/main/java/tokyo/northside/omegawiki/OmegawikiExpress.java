@@ -14,7 +14,7 @@ public class OmegawikiExpress {
         return expression;
     }
 
-    public void setExpression(String expression) {
+    public void setExpression(final String expression) {
         this.expression = expression;
     }
 
@@ -24,16 +24,14 @@ public class OmegawikiExpress {
     }
 
     @JsonAnySetter
-    public void setOmegawikiDefinitions(Map<String, OmegawikiDefinition> omegawikiDefinitions) {
+    public void setOmegawikiDefinitions(final Map<String, OmegawikiDefinition> omegawikiDefinitions) {
         this.omegawikiDefinitions = omegawikiDefinitions;
     }
 
     @Override
     public String toString() {
-        return "OmegawikiExpress{" +
-                "expression='" + expression + '\'' +
-                ", omegawikiDefinitions=" + omegawikiDefinitions +
-                '}';
+        return "OmegawikiExpress{" + "expression='" + expression + '\''
+                + ", omegawikiDefinitions=" + omegawikiDefinitions + '}';
     }
 
 }

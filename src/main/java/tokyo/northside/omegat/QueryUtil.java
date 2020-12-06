@@ -12,7 +12,9 @@ import org.apache.hc.core5.http.io.entity.EntityUtils;
 
 import java.util.Map;
 
-class QueryUtil {
+final class QueryUtil {
+
+    private QueryUtil() { }
 
     public static String query(final String queryUrl, final Map<String, Object> header) {
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {

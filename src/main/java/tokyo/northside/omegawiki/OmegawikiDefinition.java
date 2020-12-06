@@ -10,7 +10,7 @@ public class OmegawikiDefinition {
         return dmid;
     }
 
-    public void setDmid(String dmid) {
+    public void setDmid(final String dmid) {
         this.dmid = dmid;
     }
 
@@ -18,7 +18,7 @@ public class OmegawikiDefinition {
         return langid;
     }
 
-    public void setLangid(String langid) {
+    public void setLangid(final String langid) {
         this.langid = langid;
     }
 
@@ -26,7 +26,7 @@ public class OmegawikiDefinition {
         return lang;
     }
 
-    public void setLang(String lang) {
+    public void setLang(final String lang) {
         this.lang = lang;
     }
 
@@ -34,17 +34,13 @@ public class OmegawikiDefinition {
         return definition;
     }
 
-    public void setDefinition(Definition definition) {
+    public void setDefinition(final Definition definition) {
         this.definition = definition;
     }
 
     @Override
     public String toString() {
-        return "Definition{" +
-                "dmid=" + dmid +
-                ", langid=" + langid +
-                ", lang='" + lang + '\'' +
-                ", definition=" + definition +
-                '}';
+        return "Definition{" + "dmid=" + dmid + ", langid=" + langid + ","
+               + " lang='" + lang + '\'' + ", definition=" + definition + '}';
     }
 }

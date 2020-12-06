@@ -32,12 +32,15 @@ import java.util.Set;
 
 /**
  * A map that maps keys to sets of values. Does NOT allow null keys/values.
+ * @param <K> type of key
+ * @param <V> type of Value
  *
  * @author Maxym Mykhalchuk
+ * @author Hiroshi Miura
  */
 public class MultiMap<K, V> {
     /** We're backed up by a HashMap<key, HashSet>. */
-    Map<K, Set<V>> map;
+    private Map<K, Set<V>> map;
 
     /** Creates an empty MultiMap. */
     public MultiMap() {
@@ -47,16 +50,21 @@ public class MultiMap<K, V> {
     /**
      * Returns <tt>true</tt> if this map contains a mapping for the specified
      * key.
+     * @param key to test whether contains or not.
+     * @return true if map has key, otherwise false
      */
-    public boolean containsKey(K key) {
+    public boolean containsKey(final K key) {
         return map.containsKey(key);
     }
 
     /**
      * Returns <tt>true</tt> if this map maps the specified key to the specified
      * value.
+     * @param key to test
+     * @param value to test
+     * @return true if specified (key, value) is existed in map, otherwise false.
      */
-    public boolean containsPair(K key, V value) {
+    public boolean containsPair(final K key, final V value) {
         if (containsKey(key)) {
             Set<V> values = map.get(key);
             return values.contains(value);
@@ -66,10 +74,11 @@ public class MultiMap<K, V> {
     }
 
     /**
-     * Return values for the specified key
+     * Return values for the specified key.
      * @return Set of values.
+     * @param key key of type K to get value
      */
-    public Set<V> getValues(K key) {
+    public Set<V> getValues(final K key) {
         if (containsKey(key)) {
             return map.get(key);
         } else {
@@ -82,8 +91,10 @@ public class MultiMap<K, V> {
      * Unlike normal Map, if the map previously contained a mapping for this
      * key, the new value is appended to the list of the values mapped from this
      * key.
+     * @param key
+     * @param value
      */
-    public void put(K key, V value) {
+    public void put(final K key, final V value) {
         if (containsKey(key)) {
             Set<V> values = map.get(key);
             values.add(value);
@@ -94,8 +105,11 @@ public class MultiMap<K, V> {
         }
     }
 
-    /** Removes all the mappings for this key from this map if it is present. */
-    public void remove(Object key) {
+    /**
+     *  Removes all the mappings for this key from this map if it is present.
+     * @param key to remove
+     */
+    public void remove(final Object key) {
         map.remove(key);
     }
 }

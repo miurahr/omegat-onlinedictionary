@@ -11,7 +11,7 @@ public class Entry {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -19,7 +19,7 @@ public class Entry {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage(final String language) {
         this.language = language;
     }
 
@@ -27,7 +27,7 @@ public class Entry {
         return lexicalEntryList;
     }
 
-    public void setLexicalEntryList(List<LexicalEntry> lexicalEntryList) {
+    public void setLexicalEntryList(final List<LexicalEntry> lexicalEntryList) {
         this.lexicalEntryList = lexicalEntryList;
     }
 }
