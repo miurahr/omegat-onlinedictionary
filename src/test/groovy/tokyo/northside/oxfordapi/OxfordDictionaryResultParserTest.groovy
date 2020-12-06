@@ -47,12 +47,23 @@ class OxfordDictionaryResultParserTest {
     void testParse4() {
         InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result4.json")
         String json = IOUtils.toString(resource, "UTF-8")
-        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("software")
+        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("freedom")
         parser.parse(json)
         List<Result> result = parser.getResults()
         Result entry = result.get(0)
         assertEquals("freedom", entry.getId())
 
+    }
+
+    @Test
+    void testParse5() {
+        InputStream resource = OxfordDictionaryEntryParser.class.getClassLoader().getResourceAsStream("oxfordapi_entry_result5.json")
+        String json = IOUtils.toString(resource, "UTF-8")
+        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser("documentation")
+        parser.parse(json)
+        List<Result> result = parser.getResults()
+        Result entry = result.get(0)
+        assertEquals("documentation", entry.getId())
     }
 
 }

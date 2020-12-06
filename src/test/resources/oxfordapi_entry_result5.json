@@ -1,0 +1,162 @@
+{
+  "id": "documentation",
+  "metadata": {
+    "operation": "retrieve",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveEntry"
+  },
+  "results": [
+    {
+      "id": "documentation",
+      "language": "en-us",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "pronunciations": [
+                {
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "respell",
+                  "phoneticSpelling": "ˌdäkyəmənˈtāSH(ə)n"
+                },
+                {
+                  "audioFile": "https://audio.oxforddictionaries.com/en/mp3/documentation_us_1.mp3",
+                  "dialects": [
+                    "American English"
+                  ],
+                  "phoneticNotation": "IPA",
+                  "phoneticSpelling": "ˌdɑkjəmənˈteɪʃ(ə)n"
+                }
+              ],
+              "senses": [
+                {
+                  "definitions": [
+                    "material that provides official information or evidence or that serves as a record"
+                  ],
+                  "examples": [
+                    {
+                      "text": "you will have to complete the relevant documentation"
+                    }
+                  ],
+                  "id": "m_en_gbus0287390.006",
+                  "semanticClasses": [
+                    {
+                      "id": "document",
+                      "text": "Document"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "material that provides official information or evidence or that serves as record"
+                  ],
+                  "subsenses": [
+                    {
+                      "definitions": [
+                        "the written specification and instructions accompanying a computer program or hardware"
+                      ],
+                      "domainClasses": [
+                        {
+                          "id": "computing",
+                          "text": "Computing"
+                        }
+                      ],
+                      "examples": [
+                        {
+                          "text": "user documentation"
+                        }
+                      ],
+                      "id": "m_en_gbus0287390.008",
+                      "semanticClasses": [
+                        {
+                          "id": "text",
+                          "text": "Text"
+                        }
+                      ],
+                      "shortDefinitions": [
+                        "written specification and instructions accompanying product"
+                      ]
+                    }
+                  ],
+                  "synonyms": [
+                    {
+                      "language": "en",
+                      "text": "official paper"
+                    },
+                    {
+                      "language": "en",
+                      "text": "legal paper"
+                    },
+                    {
+                      "language": "en",
+                      "text": "paper"
+                    },
+                    {
+                      "language": "en",
+                      "text": "form"
+                    },
+                    {
+                      "language": "en",
+                      "text": "certificate"
+                    },
+                    {
+                      "language": "en",
+                      "text": "deed"
+                    },
+                    {
+                      "language": "en",
+                      "text": "charter"
+                    },
+                    {
+                      "language": "en",
+                      "text": "contract"
+                    },
+                    {
+                      "language": "en",
+                      "text": "legal agreement"
+                    }
+                  ],
+                  "thesaurusLinks": [
+                    {
+                      "entry_id": "document",
+                      "sense_id": "t_en_gb0004334.001"
+                    }
+                  ]
+                },
+                {
+                  "definitions": [
+                    "the process of classifying and annotating texts, photographs, etc."
+                  ],
+                  "examples": [
+                    {
+                      "text": "she arranged the collection and documentation of photographs"
+                    }
+                  ],
+                  "id": "m_en_gbus0287390.010",
+                  "semanticClasses": [
+                    {
+                      "id": "practice",
+                      "text": "Practice"
+                    }
+                  ],
+                  "shortDefinitions": [
+                    "process of classifying and annotating texts, photographs, etc."
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en-us",
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          },
+          "text": "documentation"
+        }
+      ],
+      "type": "headword",
+      "word": "documentation"
+    }
+  ],
+  "word": "documentation"
+}
