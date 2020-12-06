@@ -2,3 +2,5 @@
 name: oxford dictionary api
 endpointUrl: https://od-api.oxforddictionaries.com/api/v2/
 driver: oxford
+key: "aa5cff0a"
+secret: "a8ab0ffXXX8886XX999303f2962e965"

@@ -23,6 +23,8 @@ public class OnlineDictionaryService {
     private String name;
     private String endpointUrl;
     private String driver;
+    private String key;
+    private String secret;
 
     public OnlineDictionaryService(final String name, final String endpointUrl, final String driver) {
         this.name = name;
@@ -31,6 +33,22 @@ public class OnlineDictionaryService {
     }
 
     public OnlineDictionaryService() { }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getSecret() {
+        return secret;
+    }
+
+    public void setSecret(String secret) {
+        this.secret = secret;
+    }
 
     public String getName() {
         return name;

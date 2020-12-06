@@ -2,3 +2,5 @@
 name: omegawiki
 endpointUrl: http://omegawiki.org/api.php
 driver: omegawiki
+key:
+secret:
