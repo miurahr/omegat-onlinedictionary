@@ -13,7 +13,7 @@ For OmegaWiki search:
 
 ```
 ---
-name: omegawiki
+name: omegawiki: free multilingual dictionary
 endpointUrl: http://omegawiki.org/api.php
 driver: omegawiki
 key:
@@ -24,9 +24,9 @@ For Oxford Dictionary API search:
 
 ```
 ---
-name: oxford dictionary api
+name: Oxford Dictionaries
 endpointUrl: https://od-api.oxforddictionaries.com/api/v2/
-driver: oxford
+driver: oxfordapi
 key: "aa5cff0a"
 secret: "a8ab0ffXXX8886XX999303f2962e965"
 ```
