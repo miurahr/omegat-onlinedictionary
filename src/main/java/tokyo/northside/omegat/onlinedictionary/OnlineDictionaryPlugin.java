@@ -81,6 +81,7 @@ public final class OnlineDictionaryPlugin {
         private static final List<String> SUPPORTED_DRIVERS = new ArrayList<>();
         static {
             SUPPORTED_DRIVERS.add("omegawiki");
+            SUPPORTED_DRIVERS.add("oxfordapi");
         }
 
         public OnlineDictionaryMain() { }
@@ -137,9 +138,9 @@ public final class OnlineDictionaryPlugin {
 
         public OnlineDictionary(final OnlineDictionaryService service,
                                 final Language source, final Language target) throws Exception {
-            if ("omegawiki".equals(service.getName())) {
+            if ("omegawiki".equals(service.getDriver())) {
                 drivers.add(new OmegawikiDriver(service.getEndpointUrl(), source, target));
-            } else if ("oxford".equals(service.getName())) {
+            } else if ("oxfordapi".equals(service.getDriver())) {
                 drivers.add(new OxfordDriver(service.getEndpointUrl(), service.getKey(), service.getSecret(),
                         source, target));
             } else {

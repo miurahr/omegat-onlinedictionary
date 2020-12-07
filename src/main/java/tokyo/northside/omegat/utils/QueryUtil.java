@@ -37,8 +37,7 @@ public final class QueryUtil {
                 }
             };
             return httpclient.execute(httpGet, responseHandler);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ignored) {
         }
         return null;
     }

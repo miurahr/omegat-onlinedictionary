@@ -21,6 +21,10 @@ public class Subsense {
     private List<ThesaurusLink> thesaurusLinks;
     @JsonIgnore
     private List<Construction> constructions;
+    @JsonIgnore
+    private List<CrossReference> crossReferences;
+    @JsonIgnore
+    private List<String> crossReferenceMarkers;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -124,6 +128,22 @@ public class Subsense {
 
     public void setConstructions(List<Construction> constructions) {
         this.constructions = constructions;
+    }
+
+    public List<String> getCrossReferenceMarkers() {
+        return crossReferenceMarkers;
+    }
+
+    public void setCrossReferenceMarkers(List<String> crossReferenceMarkers) {
+        this.crossReferenceMarkers = crossReferenceMarkers;
+    }
+
+    public List<CrossReference> getCrossReferences() {
+        return crossReferences;
+    }
+
+    public void setCrossReferences(List<CrossReference> crossReferences) {
+        this.crossReferences = crossReferences;
     }
 
     @Override

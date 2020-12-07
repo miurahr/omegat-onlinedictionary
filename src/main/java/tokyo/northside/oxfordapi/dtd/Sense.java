@@ -26,6 +26,10 @@ public class Sense {
     private List<Inflection> inflections;
     @JsonIgnore
     private List<Construction> constructions;
+    @JsonIgnore
+    private List<Domain> domains;
+    @JsonIgnore
+    private List<Note> notes;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -145,6 +149,22 @@ public class Sense {
 
     public void setConstructions(List<Construction> constructions) {
         this.constructions = constructions;
+    }
+
+    public List<Domain> getDomains() {
+        return domains;
+    }
+
+    public void setDomains(List<Domain> domains) {
+        this.domains = domains;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 
     @Override

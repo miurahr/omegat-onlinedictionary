@@ -14,7 +14,11 @@ public class LexicalEntry {
     private LexicalCategory lexicalCategory;
     @JsonIgnore
     private List<Derivative> derivatives;
+    @JsonIgnore
+    private List<DerivativeOf> derivativeOf;
     private List<Phrase> phrases;
+    @JsonIgnore
+    private List<PhrasalVerb> phrasalVerbs;
 
     public List<Compound> getCompounds() {
         return compounds;
@@ -70,6 +74,22 @@ public class LexicalEntry {
 
     public void setDerivatives(List<Derivative> derivatives) {
         this.derivatives = derivatives;
+    }
+
+    public List<PhrasalVerb> getPhrasalVerbs() {
+        return phrasalVerbs;
+    }
+
+    public void setPhrasalVerbs(List<PhrasalVerb> phrasalVerbs) {
+        this.phrasalVerbs = phrasalVerbs;
+    }
+
+    public List<DerivativeOf> getDerivativeOf() {
+        return derivativeOf;
+    }
+
+    public void setDerivativeOf(List<DerivativeOf> derivativeOf) {
+        this.derivativeOf = derivativeOf;
     }
 
     @Override

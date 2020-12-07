@@ -20,6 +20,8 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
 package tokyo.northside.omegat.onlinedictionary.drivers;
 
 import org.omegat.util.Language;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tokyo.northside.omegat.utils.QueryUtil;
 import tokyo.northside.oxfordapi.dtd.Entry;
 import tokyo.northside.oxfordapi.dtd.LexicalEntry;
@@ -35,6 +37,8 @@ import java.util.Map;
 
 
 public class OxfordDriver implements IOnlineDictionaryDriver {
+
+    private final Logger LOGGER = LoggerFactory.getLogger(OxfordDriver.class.getName());
     private final String appId;
     private final String appKey;
     private final String endpointUrl;
@@ -63,13 +67,16 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
             for (LexicalEntry lexicalEntry : result.getLexicalEntries()) {
                 for (Entry entry: lexicalEntry.getEntries()) {
                     for (Sense sense: entry.getSenses()) {
-                        for (String text: sense.getDefinitions()) {
-                            definitions.add(text);
+                        if (sense != null) {
+                            for (String text : sense.getDefinitions()) {
+                                definitions.add(text);
+                            }
                         }
                     }
                 }
             }
         }
+        LOGGER.info("oxford :Resulted # of articles: " + definitions.size());
         return definitions;
     }
 
@@ -102,13 +109,16 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         String requestUrl = getRequestUrl(word, false);
         Map<String, Object> header = getHeaderEntries();
         String response = QueryUtil.query(requestUrl, header);
-        OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser(word);
-        try {
-            parser.parse(response);
-            List<Result> results = parser.getResults();
-            return results;
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (response != null) {
+            OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser(word);
+            try {
+                parser.parse(response);
+                List<Result> results = parser.getResults();
+                LOGGER.info("Got query result from Oxford Dictionary API.");
+                return results;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return new ArrayList<>();
     }
