@@ -68,7 +68,7 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
         this.source = source;
         this.target = target;
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        TypeReference<HashMap<String, String>> typeRef = new TypeReference<>() { };
+        TypeReference<HashMap<String, String>> typeRef = new TypeReference<HashMap<String, String>>() { };
         try (InputStream is = OmegawikiDriver.class.getClassLoader().getResourceAsStream("languages.yml")) {
             assert is != null;
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
