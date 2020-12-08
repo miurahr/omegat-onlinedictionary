@@ -1,7 +1,5 @@
 package tokyo.northside.oxfordapi.dtd;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.List;
 
 public class Sense {
@@ -14,21 +12,14 @@ public class Sense {
     private List<Subsense> subsenses;
     private List<Synonym> synonyms;
     private List<ThesaurusLink> thesaurusLinks;
-    @JsonIgnore
+    private List<Translation> translations;
     private List<Register> registers;
-    @JsonIgnore
     private List<Region> regions;
-    @JsonIgnore
     private List<String> crossReferenceMarkers;
-    @JsonIgnore
     private List<CrossReference> crossReferences;
-    @JsonIgnore
     private List<Inflection> inflections;
-    @JsonIgnore
     private List<Construction> constructions;
-    @JsonIgnore
     private List<Domain> domains;
-    @JsonIgnore
     private List<Note> notes;
 
     public List<String> getDefinitions() {
@@ -167,6 +158,14 @@ public class Sense {
         this.notes = notes;
     }
 
+    public List<Translation> getTranslations() {
+        return translations;
+    }
+
+    public void setTranslations(List<Translation> translations) {
+        this.translations = translations;
+    }
+
     @Override
     public String toString() {
         return "Sense{" +
@@ -181,6 +180,13 @@ public class Sense {
                 ", thesaurusLinks=" + thesaurusLinks +
                 ", registers=" + registers +
                 ", regions=" + regions +
+                ", crossReferenceMarkers=" + crossReferenceMarkers +
+                ", crossReferences=" + crossReferences +
+                ", inflections=" + inflections +
+                ", constructions=" + constructions +
+                ", domains=" + domains +
+                ", notes=" + notes +
+                ", translations=" + translations +
                 '}';
     }
 }

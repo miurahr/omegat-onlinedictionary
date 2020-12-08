@@ -15,14 +15,18 @@ class OxfordDriverTest {
     @Test
     void constructorTest() {
         OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("es"))
-        def results = driver.queryEntries("ace")
+        def requestUrl = driver.getEntriesRequestUrl("ace", false);
+        def results = driver.query(requestUrl, "ace")
+        assert(results.size() > 0)
         assertEquals("ace", results.get(0).getWord())
     }
 
     @Test
     void readDefinitionTest() {
         OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("ja"))
-        def text = driver.readDefinition("software").get(0)
+        def definitions = driver.readDefinition("software")
+        assert(definitions.size() > 0)
+        def text = definitions.get(0)
         assertEquals("the programs and other operating information used by a computer", text)
         text = driver.readDefinition("ace").get(0)
         assertEquals("a playing card with a single spot on it, ranked as the highest card in its suit in most card games", text)

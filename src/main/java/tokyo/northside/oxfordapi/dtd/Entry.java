@@ -1,24 +1,19 @@
 package tokyo.northside.oxfordapi.dtd;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import gen.core.tbx.P;
 
 import java.util.List;
 
 public class Entry {
     private List<String> etymologies;
     private String homographNumber;
-    private List<Pronounciation> pronunciations;
+    private List<Pronunciation> pronunciations;
     private List<Sense> senses;
     private List<GrammaticalFeature> grammaticalFeatures;
-    @JsonIgnore
     private List<Inflection> inflections;
-    @JsonIgnore
     private List<CrossReference> crossReferences;
-    @JsonIgnore
     private List<String> crossReferenceMarkers;
-    @JsonIgnore
     private List<Note> notes;
+    private List<VariantForm> variantForms;
 
     public List<String> getEtymologies() {
         return etymologies;
@@ -36,11 +31,11 @@ public class Entry {
         this.homographNumber = homographNumber;
     }
 
-    public List<Pronounciation> getPronunciations() {
+    public List<Pronunciation> getPronunciations() {
         return pronunciations;
     }
 
-    public void setPronunciations(List<Pronounciation> pronunciations) {
+    public void setPronunciations(List<Pronunciation> pronunciations) {
         this.pronunciations = pronunciations;
     }
 
@@ -90,5 +85,29 @@ public class Entry {
 
     public void setNotes(List<Note> notes) {
         this.notes = notes;
+    }
+
+    public List<VariantForm> getVariantForms() {
+        return variantForms;
+    }
+
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "etymologies=" + etymologies +
+                ", homographNumber='" + homographNumber + '\'' +
+                ", pronunciations=" + pronunciations +
+                ", senses=" + senses +
+                ", grammaticalFeatures=" + grammaticalFeatures +
+                ", inflections=" + inflections +
+                ", crossReferences=" + crossReferences +
+                ", crossReferenceMarkers=" + crossReferenceMarkers +
+                ", notes=" + notes +
+                ", variantForms=" + variantForms +
+                '}';
+    }
+
+    public void setVariantForms(List<VariantForm> variantForms) {
+        this.variantForms = variantForms;
     }
 }

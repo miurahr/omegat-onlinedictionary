@@ -1,14 +1,11 @@
 package tokyo.northside.oxfordapi.dtd;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.List;
 
-public class Pronounciation {
+public class Pronunciation {
     private List<String> dialects;
     private String phoneticNotation;
     private String phoneticSpelling;
-    @JsonIgnore
     private String audioFile;
 
     public List<String> getDialects() {

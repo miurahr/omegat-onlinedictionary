@@ -23,11 +23,8 @@ import org.omegat.util.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tokyo.northside.omegat.utils.QueryUtil;
-import tokyo.northside.oxfordapi.dtd.Entry;
-import tokyo.northside.oxfordapi.dtd.LexicalEntry;
-import tokyo.northside.oxfordapi.dtd.Result;
-import tokyo.northside.oxfordapi.OxfordDictionaryEntryParser;
-import tokyo.northside.oxfordapi.dtd.Sense;
+import tokyo.northside.oxfordapi.dtd.*;
+import tokyo.northside.oxfordapi.OxfordDictionaryParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,13 +58,15 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
 
     @Override
     public List<String> readDefinition(final String word) {
-        List<Result> results = queryEntries(word);
+        String requestUrl = getEntriesRequestUrl(word, false);
+        List<Result> results = query(requestUrl, word);
         List<String> definitions = new ArrayList<>();
+        LOGGER.info("oxford : query for: " + word);
         for (Result result : results) {
             for (LexicalEntry lexicalEntry : result.getLexicalEntries()) {
                 for (Entry entry: lexicalEntry.getEntries()) {
                     for (Sense sense: entry.getSenses()) {
-                        if (sense != null) {
+                        if (sense.getDefinitions() != null) {
                             for (String text : sense.getDefinitions()) {
                                 definitions.add(text);
                             }
@@ -76,16 +75,31 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
                 }
             }
         }
-        LOGGER.info("oxford :Resulted # of articles: " + definitions.size());
+        LOGGER.info("oxford :Resulted # of definitions: " + definitions.size());
         return definitions;
     }
 
     @Override
     public List<String> readTranslation(final String word) {
-        return null;
+        String requestUrl = getTranslationsRequestUrl(word, false);
+        List<Result> results = query(requestUrl, word);
+        List<String> translations = new ArrayList<>();
+        for (Result result : results) {
+            for (LexicalEntry lexicalEntry : result.getLexicalEntries()) {
+                for (Entry entry: lexicalEntry.getEntries()) {
+                    for (Sense sense: entry.getSenses()) {
+                        for (Translation translation: sense.getTranslations()) {
+                            translations.add(translation.getText());
+                        }
+                    }
+                }
+            }
+        }
+        LOGGER.info("oxford :Resulted # of translations: " + translations.size());
+        return translations;
     }
 
-    private String getRequestUrl(final String word, final boolean strict) {
+    protected String getEntriesRequestUrl(final String word, final boolean strict) {
         final String strictMatch;
         if (strict) {
             strictMatch = "true";
@@ -97,6 +111,13 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         return endpointUrl + "entries/" + language + "/" + wordId + "?" + "&strictMatch=" + strictMatch;
     }
 
+    protected String getTranslationsRequestUrl(final String word, final boolean strictMatch) {
+        final String wordId = word.toLowerCase();
+        String sourceLang = source.getLanguageCode();
+        String targetLang = target.getLanguageCode();
+        return endpointUrl + "translations/" + sourceLang + "/" + targetLang + "/" + wordId + "?" + "&strictMatch=" + strictMatch;
+    }
+
     private Map<String, Object> getHeaderEntries() {
         Map<String, Object> header = new HashMap<>();
         header.put("Accept", "application/json");
@@ -105,12 +126,11 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         return header;
     }
 
-    protected List<Result> queryEntries(final String word) {
-        String requestUrl = getRequestUrl(word, false);
+    protected List<Result> query(final String requestUrl, final String word) {
         Map<String, Object> header = getHeaderEntries();
         String response = QueryUtil.query(requestUrl, header);
         if (response != null) {
-            OxfordDictionaryEntryParser parser = new OxfordDictionaryEntryParser(word);
+            OxfordDictionaryParser parser = new OxfordDictionaryParser(word);
             try {
                 parser.parse(response);
                 List<Result> results = parser.getResults();
@@ -122,4 +142,5 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         }
         return new ArrayList<>();
     }
+
 }

@@ -11,12 +11,12 @@ import java.util.List;
 import tokyo.northside.oxfordapi.dtd.Result;
 
 
-public class OxfordDictionaryEntryParser {
+public class OxfordDictionaryParser {
 
     private String word;
     private List<Result> results = new ArrayList<>();
 
-    public OxfordDictionaryEntryParser(final String word) {
+    public OxfordDictionaryParser(final String word) {
         this.word = word;
     }
 

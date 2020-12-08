@@ -155,6 +155,9 @@ public final class OnlineDictionaryPlugin {
                 for (String definition : driver.readDefinition(word)) {
                     articles.add(new DictionaryEntry(word, definition));
                 }
+                for (String translation: driver.readTranslation(word)) {
+                    articles.add(new DictionaryEntry(word, translation));
+                }
             }
             return articles;
         }

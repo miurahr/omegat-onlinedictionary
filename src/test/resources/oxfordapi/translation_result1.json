@@ -1,0 +1,76 @@
+{
+  "id": "documentation",
+  "metadata": {
+    "operation": "translations",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveTranslations"
+  },
+  "results": [
+    {
+      "id": "documentation",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "b-en-de0010238.002",
+                  "translations": [
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "feminine",
+                          "text": "Feminine",
+                          "type": "Gender"
+                        }
+                      ],
+                      "language": "de",
+                      "text": "Dokumentation"
+                    }
+                  ]
+                },
+                {
+                  "id": "b-en-de0010238.003",
+                  "translations": [
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "plural",
+                          "text": "Plural",
+                          "type": "Number"
+                        }
+                      ],
+                      "language": "de",
+                      "text": "beweiskräftige Dokumente"
+                    },
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "plural",
+                          "text": "Plural",
+                          "type": "Number"
+                        }
+                      ],
+                      "language": "de",
+                      "text": "Beweisstücke"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          },
+          "text": "documentation"
+        }
+      ],
+      "type": "headword",
+      "word": "documentation"
+    }
+  ],
+  "word": "documentation"
+}

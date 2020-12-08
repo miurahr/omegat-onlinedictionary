@@ -15,15 +15,10 @@ public class Subsense {
     private List<Register> registers;
     private List<Region> regions;
     private List<Note> notes;
-    @JsonIgnore
     private List<Synonym> synonyms;
-    @JsonIgnore
     private List<ThesaurusLink> thesaurusLinks;
-    @JsonIgnore
     private List<Construction> constructions;
-    @JsonIgnore
     private List<CrossReference> crossReferences;
-    @JsonIgnore
     private List<String> crossReferenceMarkers;
 
     public List<String> getDefinitions() {

@@ -1,17 +1,14 @@
 package tokyo.northside.oxfordapi.dtd;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 
 public class Example {
-    @JsonIgnore
     private List<Register> registers;
     private String text;
-    @JsonIgnore
     private List<Note> notes;
-    @JsonIgnore
     private List<String> senseIds;
+    private List<Translation> translations;
 
     public List<Register> getRegisters() {
         return registers;
@@ -45,8 +42,17 @@ public class Example {
         this.senseIds = senseIds;
     }
 
+    public List<Translation> getTranslations() {
+        return translations;
+    }
+
+    public void setTranslations(List<Translation> translations) {
+        this.translations = translations;
+    }
+
     @Override
     public String toString() {
-        return "Example{" + "registers=" + registers + ", text='" + text + '\'' + ", notes=" + notes + '}';
+        return "Example{" + "registers=" + registers + ", text='" + text + '\'' + ", notes=" + notes
+                + ", senseIds=" + senseIds + ", translations=" + translations + '}';
     }
 }

@@ -5,9 +5,9 @@ import java.util.List;
 public class Inflection {
     private List<Domain> domains;
     private List<GrammaticalFeature> grammaticalFeatures;
-    private String infectedForm;
+    private String inflectedForm;
     private LexicalCategory lexicalCategory;
-    private List<Pronounciation> pronounciations;
+    private List<Pronunciation> pronunciations;
     private List<Region> regions;
     private List<Register> registers;
 
@@ -27,14 +27,6 @@ public class Inflection {
         this.grammaticalFeatures = grammaticalFeatures;
     }
 
-    public String getInfectedForm() {
-        return infectedForm;
-    }
-
-    public void setInfectedForm(String infectedForm) {
-        this.infectedForm = infectedForm;
-    }
-
     public LexicalCategory getLexicalCategory() {
         return lexicalCategory;
     }
@@ -43,12 +35,12 @@ public class Inflection {
         this.lexicalCategory = lexicalCategory;
     }
 
-    public List<Pronounciation> getPronounciations() {
-        return pronounciations;
+    public List<Pronunciation> getPronounciations() {
+        return pronunciations;
     }
 
-    public void setPronounciations(List<Pronounciation> pronounciations) {
-        this.pronounciations = pronounciations;
+    public void setPronounciations(List<Pronunciation> pronunciations) {
+        this.pronunciations = pronunciations;
     }
 
     public List<Region> getRegions() {
@@ -67,14 +59,22 @@ public class Inflection {
         this.registers = registers;
     }
 
+    public String getInflectedForm() {
+        return inflectedForm;
+    }
+
+    public void setInflectedForm(String inflectedForm) {
+        this.inflectedForm = inflectedForm;
+    }
+
     @Override
     public String toString() {
         return "Inflection{" +
                 "domains=" + domains +
                 ", grammaticalFeatures=" + grammaticalFeatures +
-                ", infectedForm='" + infectedForm + '\'' +
+                ", inflectedForm='" + inflectedForm + '\'' +
                 ", lexicalCategory=" + lexicalCategory +
-                ", pronounciations=" + pronounciations +
+                ", pronounciations=" + pronunciations +
                 ", regions=" + regions +
                 ", registers=" + registers +
                 '}';

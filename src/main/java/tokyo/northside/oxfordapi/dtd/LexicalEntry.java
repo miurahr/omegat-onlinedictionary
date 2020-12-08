@@ -1,23 +1,16 @@
 package tokyo.northside.oxfordapi.dtd;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.List;
 
 public class LexicalEntry {
-    @JsonIgnore
     private List<Compound> compounds;
     private List<Entry> entries;
     private String language;
     private String text;
-    @JsonIgnore
     private LexicalCategory lexicalCategory;
-    @JsonIgnore
     private List<Derivative> derivatives;
-    @JsonIgnore
     private List<DerivativeOf> derivativeOf;
     private List<Phrase> phrases;
-    @JsonIgnore
     private List<PhrasalVerb> phrasalVerbs;
 
     public List<Compound> getCompounds() {

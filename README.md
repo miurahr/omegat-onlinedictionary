@@ -31,4 +31,4 @@ key: "aa5cff0a"
 secret: "a8ab0ffXXX8886XX999303f2962e965"
 ```
 
-You should prepare  product_id and key_id from Oxford dictionary site with contract.
+You should prepare  app_id and app_key from [Oxford dictionaries developer site](https://developer.oxforddictionaries.com/).
