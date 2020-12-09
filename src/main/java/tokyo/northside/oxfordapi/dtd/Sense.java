@@ -21,6 +21,7 @@ public class Sense {
     private List<Construction> constructions;
     private List<Domain> domains;
     private List<Note> notes;
+    private List<VariantForm> variantForms;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -166,6 +167,14 @@ public class Sense {
         this.translations = translations;
     }
 
+    public List<VariantForm> getVariantForms() {
+        return variantForms;
+    }
+
+    public void setVariantForms(List<VariantForm> variantForms) {
+        this.variantForms = variantForms;
+    }
+
     @Override
     public String toString() {
         return "Sense{" +
@@ -187,6 +196,7 @@ public class Sense {
                 ", domains=" + domains +
                 ", notes=" + notes +
                 ", translations=" + translations +
+                ", variantMorms= " + variantForms +
                 '}';
     }
 }

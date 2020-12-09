@@ -1,0 +1,167 @@
+{
+  "id": "advocate",
+  "metadata": {
+    "operation": "translations",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveTranslations"
+  },
+  "results": [
+    {
+      "id": "advocate",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "b-en-es0000715.003",
+                  "translations": [
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "masculine",
+                          "text": "Masculine",
+                          "type": "Gender"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "defensor",
+                      "type": "direct"
+                    },
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "feminine",
+                          "text": "Feminine",
+                          "type": "Gender"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "defensora",
+                      "type": "direct"
+                    }
+                  ]
+                },
+                {
+                  "id": "b-en-es0000715.004",
+                  "translations": [
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "masculine",
+                          "text": "Masculine",
+                          "type": "Gender"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "abogado defensor",
+                      "type": "direct"
+                    },
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "feminine",
+                          "text": "Feminine",
+                          "type": "Gender"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "abogada defensora",
+                      "type": "direct"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          },
+          "text": "advocate"
+        },
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "b-en-es0000715.006",
+                  "translations": [
+                    {
+                      "collocations": [
+                        {
+                          "id": "idea",
+                          "text": "idea",
+                          "type": "object"
+                        },
+                        {
+                          "id": "course_of_action",
+                          "text": "course of action",
+                          "type": "object"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "recomendar",
+                      "type": "direct"
+                    },
+                    {
+                      "collocations": [
+                        {
+                          "id": "idea",
+                          "text": "idea",
+                          "type": "object"
+                        },
+                        {
+                          "id": "course_of_action",
+                          "text": "course of action",
+                          "type": "object"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "abogar por",
+                      "type": "direct"
+                    },
+                    {
+                      "collocations": [
+                        {
+                          "id": "idea",
+                          "text": "idea",
+                          "type": "object"
+                        },
+                        {
+                          "id": "course_of_action",
+                          "text": "course of action",
+                          "type": "object"
+                        }
+                      ],
+                      "language": "es",
+                      "registers": [
+                        {
+                          "id": "formal",
+                          "text": "Formal"
+                        }
+                      ],
+                      "text": "propugnar",
+                      "type": "direct"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": {
+            "id": "verb",
+            "text": "Verb"
+          },
+          "text": "advocate"
+        }
+      ],
+      "type": "headword",
+      "word": "advocate"
+    }
+  ],
+  "word": "advocate"
+}

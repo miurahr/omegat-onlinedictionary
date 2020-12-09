@@ -10,6 +10,7 @@ public class Example {
     private List<String> senseIds;
     private List<Translation> translations;
     private List<Region> regions;
+    private List<Domain> domains;
 
     public List<Register> getRegisters() {
         return registers;
@@ -59,9 +60,17 @@ public class Example {
         this.regions = regions;
     }
 
+    public List<Domain> getDomains() {
+        return domains;
+    }
+
+    public void setDomains(List<Domain> domains) {
+        this.domains = domains;
+    }
+
     @Override
     public String toString() {
         return "Example{" + "registers=" + registers + ", text='" + text + '\'' + ", notes=" + notes
-                + ", senseIds=" + senseIds + ", translations=" + translations + '}';
+                + ", senseIds=" + senseIds + ", translations=" + translations + ", domains=" + domains +  '}';
     }
 }

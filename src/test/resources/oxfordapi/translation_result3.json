@@ -1,0 +1,175 @@
+{
+  "id": "access",
+  "metadata": {
+    "operation": "translations",
+    "provider": "Oxford University Press",
+    "schema": "RetrieveTranslations"
+  },
+  "results": [
+    {
+      "id": "access",
+      "language": "en",
+      "lexicalEntries": [
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "b-en-es0000252.002",
+                  "translations": [
+                    {
+                      "grammaticalFeatures": [
+                        {
+                          "id": "masculine",
+                          "text": "Masculine",
+                          "type": "Gender"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "acceso",
+                      "type": "direct"
+                    }
+                  ]
+                },
+                {
+                  "id": "b-en-es0000252.003",
+                  "subsenses": [
+                    {
+                      "id": "b-en-es0000252.004",
+                      "translations": [
+                        {
+                          "grammaticalFeatures": [
+                            {
+                              "id": "masculine",
+                              "text": "Masculine",
+                              "type": "Gender"
+                            }
+                          ],
+                          "language": "es",
+                          "text": "acceso",
+                          "type": "direct"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "b-en-es0000252.005",
+                      "translations": [
+                        {
+                          "grammaticalFeatures": [
+                            {
+                              "id": "masculine",
+                              "text": "Masculine",
+                              "type": "Gender"
+                            }
+                          ],
+                          "language": "es",
+                          "text": "acceso",
+                          "type": "direct"
+                        },
+                        {
+                          "collocations": [
+                            {
+                              "id": "code",
+                              "text": "code",
+                              "type": "object"
+                            },
+                            {
+                              "id": "time",
+                              "text": "time",
+                              "type": "object"
+                            }
+                          ],
+                          "language": "es",
+                          "notes": [
+                            {
+                              "text": "before noun",
+                              "type": "grammaticalNote"
+                            }
+                          ],
+                          "text": "de acceso",
+                          "type": "direct"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": {
+            "id": "noun",
+            "text": "Noun"
+          },
+          "text": "access"
+        },
+        {
+          "entries": [
+            {
+              "senses": [
+                {
+                  "id": "b-en-es0000252.00/8",
+                  "translations": [
+                    {
+                      "collocations": [
+                        {
+                          "id": "data",
+                          "text": "data",
+                          "type": "object"
+                        },
+                        {
+                          "id": "file",
+                          "text": "file",
+                          "type": "object"
+                        },
+                        {
+                          "id": "system",
+                          "text": "system",
+                          "type": "object"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "obtener acceso a",
+                      "type": "direct"
+                    },
+                    {
+                      "collocations": [
+                        {
+                          "id": "data",
+                          "text": "data",
+                          "type": "object"
+                        },
+                        {
+                          "id": "file",
+                          "text": "file",
+                          "type": "object"
+                        },
+                        {
+                          "id": "system",
+                          "text": "system",
+                          "type": "object"
+                        }
+                      ],
+                      "language": "es",
+                      "text": "entrar a",
+                      "type": "direct"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "language": "en",
+          "lexicalCategory": {
+            "id": "verb",
+            "text": "Verb"
+          },
+          "text": "access"
+        }
+      ],
+      "type": "headword",
+      "word": "access"
+    }
+  ],
+  "word": "access"
+}
