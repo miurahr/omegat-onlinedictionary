@@ -9,6 +9,7 @@ public class Example {
     private List<Note> notes;
     private List<String> senseIds;
     private List<Translation> translations;
+    private List<Region> regions;
 
     public List<Register> getRegisters() {
         return registers;
@@ -48,6 +49,14 @@ public class Example {
 
     public void setTranslations(List<Translation> translations) {
         this.translations = translations;
+    }
+
+    public List<Region> getRegions() {
+        return regions;
+    }
+
+    public void setRegions(List<Region> regions) {
+        this.regions = regions;
     }
 
     @Override

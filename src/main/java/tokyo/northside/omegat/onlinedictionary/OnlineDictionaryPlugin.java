@@ -35,6 +35,7 @@ import org.slf4j.LoggerFactory;
 import tokyo.northside.omegat.onlinedictionary.drivers.IOnlineDictionaryDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.OmegawikiDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.OxfordDriver;
+import tokyo.northside.omegat.onlinedictionary.dtd.OnlineDictionaryService;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,8 +44,7 @@ import java.util.List;
 
 public final class OnlineDictionaryPlugin {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OnlineDictionaryPlugin.class.getName());
-
+    private static OnlineDictionaryApplicationEventListener listener;
 
     private OnlineDictionaryPlugin() { }
 
@@ -52,23 +52,30 @@ public final class OnlineDictionaryPlugin {
      * load plugin.
      */
     public static void loadPlugins() {
-        CoreEvents.registerApplicationEventListener(new OnlineDictionaryApplicationEventListener());
+        listener = new OnlineDictionaryApplicationEventListener();
+        CoreEvents.registerApplicationEventListener(listener);
     }
 
     /**
      * unload plugin.
      */
     public static void unloadPlugins() {
+        CoreEvents.unregisterApplicationEventListener(listener);
+        listener = null;
     }
 
     static class OnlineDictionaryApplicationEventListener implements IApplicationEventListener {
+        private static OnlineDictionaryMain main;
+
         @Override
         public void onApplicationStartup() {
-            Core.getDictionaries().addDictionaryFactory(new OnlineDictionaryMain());
+            main = new OnlineDictionaryMain();
+            Core.getDictionaries().addDictionaryFactory(main);
         }
 
         @Override
         public void onApplicationShutdown() {
+            Core.getDictionaries().removeDictionaryFactory(main);
         }
     }
 

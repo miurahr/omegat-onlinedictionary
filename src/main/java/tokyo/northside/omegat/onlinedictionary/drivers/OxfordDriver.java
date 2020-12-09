@@ -19,6 +19,7 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
 
 package tokyo.northside.omegat.onlinedictionary.drivers;
 
+import org.apache.hc.client5.http.ClientProtocolException;
 import org.omegat.util.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,10 +67,9 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
             for (LexicalEntry lexicalEntry : result.getLexicalEntries()) {
                 for (Entry entry: lexicalEntry.getEntries()) {
                     for (Sense sense: entry.getSenses()) {
-                        if (sense.getDefinitions() != null) {
-                            for (String text : sense.getDefinitions()) {
-                                definitions.add(text);
-                            }
+                        if (sense.getDefinitions() == null) continue;
+                        for (String text : sense.getDefinitions()) {
+                            definitions.add(text);
                         }
                     }
                 }
@@ -88,6 +88,7 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
             for (LexicalEntry lexicalEntry : result.getLexicalEntries()) {
                 for (Entry entry: lexicalEntry.getEntries()) {
                     for (Sense sense: entry.getSenses()) {
+                        if (sense.getTranslations() == null) continue;;
                         for (Translation translation: sense.getTranslations()) {
                             translations.add(translation.getText());
                         }
@@ -115,7 +116,9 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
         final String wordId = word.toLowerCase();
         String sourceLang = source.getLanguageCode();
         String targetLang = target.getLanguageCode();
-        return endpointUrl + "translations/" + sourceLang + "/" + targetLang + "/" + wordId + "?" + "&strictMatch=" + strictMatch;
+        String targetUrl = endpointUrl + "translations/" + sourceLang + "/" + targetLang + "/" + wordId + "?" + "&strictMatch=" + strictMatch;
+        LOGGER.info("target URL: " + targetUrl);
+        return targetUrl;
     }
 
     private Map<String, Object> getHeaderEntries() {
@@ -128,14 +131,19 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
 
     protected List<Result> query(final String requestUrl, final String word) {
         Map<String, Object> header = getHeaderEntries();
-        String response = QueryUtil.query(requestUrl, header);
+        String response = null;
+        try {
+            response = QueryUtil.query(requestUrl, header);
+        } catch (ClientProtocolException cpe) {
+            LOGGER.info(cpe.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if (response != null) {
             OxfordDictionaryParser parser = new OxfordDictionaryParser(word);
             try {
                 parser.parse(response);
-                List<Result> results = parser.getResults();
-                LOGGER.info("Got query result from Oxford Dictionary API.");
-                return results;
+                return parser.getResults();
             } catch (IOException e) {
                 e.printStackTrace();
             }

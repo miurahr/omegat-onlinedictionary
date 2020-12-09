@@ -23,7 +23,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import org.apache.hc.client5.http.ClientProtocolException;
 import org.omegat.util.Language;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import tokyo.northside.omegat.utils.MultiMap;
 import tokyo.northside.omegat.utils.QueryUtil;
@@ -44,6 +48,8 @@ import java.util.stream.Collectors;
 
 
 public class OmegawikiDriver implements IOnlineDictionaryDriver {
+
+    private Logger LOGGER = LoggerFactory.getLogger(OmegawikiDriver.class.getName());
 
     private String endpointUrl;
     private Language source;
@@ -112,7 +118,16 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
             for (OmegawikiEntry entry : cache.getValues(word)) {
                 String dmid = entry.getDmid();
                 String queryUrl = queryUrlBase.concat(dmid);
-                String resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
+                String resultJson = null;
+                try {
+                    resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
+                } catch (ClientProtocolException cpe) {
+                    LOGGER.info(cpe.getMessage());
+                    return meanings;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return meanings;
+                }
                 SyntransParser parser = new SyntransParser();
                 try {
                     parser.parse(resultJson);
@@ -129,12 +144,22 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
     }
 
     protected List<OmegawikiDefinition> queryExpression(final String word) {
+        List<OmegawikiDefinition> definitions = new ArrayList<>();
+        String resultJson;
         String queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
-        String resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
+        try {
+            resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
+        } catch (ClientProtocolException cpe) {
+            LOGGER.info(cpe.getMessage());
+            return definitions;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return definitions;
+        }
         ExpressionParser omegawikiParser = new ExpressionParser();
         try {
             omegawikiParser.parse(resultJson);
-            List<OmegawikiDefinition> definitions = omegawikiParser.getDefinitions();
+            definitions = omegawikiParser.getDefinitions();
             if (definitions.size() > 0) {
                 for (OmegawikiDefinition definition : definitions) {
                     cache.put(word, new OmegawikiEntry(definition.getDmid()));

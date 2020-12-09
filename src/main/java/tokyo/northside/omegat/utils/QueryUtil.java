@@ -10,13 +10,14 @@ import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 
+import java.io.IOException;
 import java.util.Map;
 
 public final class QueryUtil {
 
     private QueryUtil() { }
 
-    public static String query(final String queryUrl, final Map<String, Object> header) {
+    public static String query(final String queryUrl, final Map<String, Object> header) throws IOException {
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
             HttpGet httpGet = new HttpGet(queryUrl);
             header.forEach(httpGet::addHeader);
@@ -37,9 +38,7 @@ public final class QueryUtil {
                 }
             };
             return httpclient.execute(httpGet, responseHandler);
-        } catch (Exception ignored) {
         }
-        return null;
     }
 
 }

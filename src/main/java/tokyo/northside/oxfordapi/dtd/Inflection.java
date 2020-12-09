@@ -35,11 +35,11 @@ public class Inflection {
         this.lexicalCategory = lexicalCategory;
     }
 
-    public List<Pronunciation> getPronounciations() {
+    public List<Pronunciation> getPronunciations() {
         return pronunciations;
     }
 
-    public void setPronounciations(List<Pronunciation> pronunciations) {
+    public void setPronunciations(List<Pronunciation> pronunciations) {
         this.pronunciations = pronunciations;
     }
 

@@ -20,6 +20,8 @@ public class Subsense {
     private List<Construction> constructions;
     private List<CrossReference> crossReferences;
     private List<String> crossReferenceMarkers;
+    private List<VariantForm> variantForms;
+    private List<Translation> translations;
 
     public List<String> getDefinitions() {
         return definitions;
@@ -139,6 +141,22 @@ public class Subsense {
 
     public void setCrossReferences(List<CrossReference> crossReferences) {
         this.crossReferences = crossReferences;
+    }
+
+    public List<VariantForm> getVariantForms() {
+        return variantForms;
+    }
+
+    public void setVariantForms(List<VariantForm> variantForms) {
+        this.variantForms = variantForms;
+    }
+
+    public List<Translation> getTranslations() {
+        return translations;
+    }
+
+    public void setTranslations(List<Translation> translations) {
+        this.translations = translations;
     }
 
     @Override
