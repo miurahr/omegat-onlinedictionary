@@ -32,19 +32,17 @@ import java.util.Set;
 
 /**
  * A map that maps keys to sets of values. Does NOT allow null keys/values.
- * @param <K> type of key
- * @param <V> type of Value
  *
  * @author Maxym Mykhalchuk
  * @author Hiroshi Miura
  */
-public class MultiMap<K, V> {
+public class OnlineDictionaryMultiMap {
     /** We're backed up by a HashMap<key, HashSet>. */
-    private Map<K, Set<V>> map;
+    private Map<String, Set<OnlineDictionaryEntry>> map;
 
     /** Creates an empty MultiMap. */
-    public MultiMap() {
-        map = new HashMap<K, Set<V>>();
+    public OnlineDictionaryMultiMap() {
+        map = new HashMap<String, Set<OnlineDictionaryEntry>>();
     }
 
     /**
@@ -53,24 +51,8 @@ public class MultiMap<K, V> {
      * @param key to test whether contains or not.
      * @return true if map has key, otherwise false
      */
-    public boolean containsKey(final K key) {
+    public boolean containsKey(final String key) {
         return map.containsKey(key);
-    }
-
-    /**
-     * Returns <tt>true</tt> if this map maps the specified key to the specified
-     * value.
-     * @param key to test
-     * @param value to test
-     * @return true if specified (key, value) is existed in map, otherwise false.
-     */
-    public boolean containsPair(final K key, final V value) {
-        if (containsKey(key)) {
-            Set<V> values = map.get(key);
-            return values.contains(value);
-        } else {
-            return false;
-        }
     }
 
     /**
@@ -78,11 +60,11 @@ public class MultiMap<K, V> {
      * @return Set of values.
      * @param key key of type K to get value
      */
-    public Set<V> getValues(final K key) {
+    public Set<OnlineDictionaryEntry> getValues(final String key) {
         if (containsKey(key)) {
             return map.get(key);
         } else {
-            return new HashSet<V>();
+            return new HashSet<OnlineDictionaryEntry>();
         }
     }
 
@@ -94,12 +76,12 @@ public class MultiMap<K, V> {
      * @param key
      * @param value
      */
-    public void put(final K key, final V value) {
+    public void put(final String key, final OnlineDictionaryEntry value) {
         if (containsKey(key)) {
-            Set<V> values = map.get(key);
+            Set<OnlineDictionaryEntry> values = map.get(key);
             values.add(value);
         } else {
-            Set<V> values = new HashSet<V>();
+            Set<OnlineDictionaryEntry> values = new HashSet<OnlineDictionaryEntry>();
             values.add(value);
             map.put(key, values);
         }
@@ -109,7 +91,7 @@ public class MultiMap<K, V> {
      *  Removes all the mappings for this key from this map if it is present.
      * @param key to remove
      */
-    public void remove(final Object key) {
+    public void remove(final String key) {
         map.remove(key);
     }
 }
