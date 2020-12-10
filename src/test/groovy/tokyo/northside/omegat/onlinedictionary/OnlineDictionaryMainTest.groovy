@@ -3,7 +3,6 @@ package tokyo.northside.omegat.onlinedictionary
 import org.omegat.util.Language
 
 import org.junit.Test
-import tokyo.northside.omegat.onlinedictionary.OnlineDictionaryPlugin
 
 import static org.junit.Assert.*
 
