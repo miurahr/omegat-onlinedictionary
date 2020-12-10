@@ -39,7 +39,7 @@ class OmegawikiDriverTest {
     @Test
     void getDefinition() {
         def driver = new OmegawikiDriver(endpointUrl, new Language("en"), new Language("es"))
-        def definitions = driver.readDefinition("translate")
+        def definitions = driver.readEntries("translate")
         assertNotNull(definitions)
     }
 }

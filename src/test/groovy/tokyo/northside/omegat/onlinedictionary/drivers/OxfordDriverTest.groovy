@@ -24,11 +24,8 @@ class OxfordDriverTest {
     @Test
     void readDefinitionTest() {
         OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("ja"))
-        def definitions = driver.readDefinition("software")
-        assert(definitions.size() > 0)
-        def text = definitions.get(0)
-        assertEquals("the programs and other operating information used by a computer", text)
-        text = driver.readDefinition("ace").get(0)
-        assertEquals("a playing card with a single spot on it, ranked as the highest card in its suit in most card games", text)
+        def entries = driver.readEntries("software")
+        assert(entries.size() > 0)
+        assert(entries.contains("the programs and other operating information used by a computer"))
     }
 }

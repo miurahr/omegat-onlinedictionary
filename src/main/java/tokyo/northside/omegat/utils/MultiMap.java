@@ -36,13 +36,13 @@ import java.util.Set;
  * @author Maxym Mykhalchuk
  * @author Hiroshi Miura
  */
-public class OnlineDictionaryMultiMap {
+public class MultiMap {
     /** We're backed up by a HashMap<key, HashSet>. */
-    private Map<String, Set<OnlineDictionaryEntry>> map;
+    private Map<String, Set<String>> map;
 
     /** Creates an empty MultiMap. */
-    public OnlineDictionaryMultiMap() {
-        map = new HashMap<String, Set<OnlineDictionaryEntry>>();
+    public MultiMap() {
+        map = new HashMap<String, Set<String>>();
     }
 
     /**
@@ -60,11 +60,11 @@ public class OnlineDictionaryMultiMap {
      * @return Set of values.
      * @param key key of type K to get value
      */
-    public Set<OnlineDictionaryEntry> getValues(final String key) {
+    public Set<String> getValues(final String key) {
         if (containsKey(key)) {
             return map.get(key);
         } else {
-            return new HashSet<OnlineDictionaryEntry>();
+            return new HashSet<String>();
         }
     }
 
@@ -76,12 +76,12 @@ public class OnlineDictionaryMultiMap {
      * @param key
      * @param value
      */
-    public void put(final String key, final OnlineDictionaryEntry value) {
+    public void put(final String key, final String value) {
         if (containsKey(key)) {
-            Set<OnlineDictionaryEntry> values = map.get(key);
+            Set<String> values = map.get(key);
             values.add(value);
         } else {
-            Set<OnlineDictionaryEntry> values = new HashSet<OnlineDictionaryEntry>();
+            Set<String> values = new HashSet<String>();
             values.add(value);
             map.put(key, values);
         }

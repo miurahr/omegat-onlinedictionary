@@ -19,14 +19,12 @@ Online dictionary access plugin for OmegaT CAT tool(http://www.omegat.org/)
 
 package tokyo.northside.omegat.onlinedictionary.drivers;
 
-import java.util.List;
+import java.util.Set;
 
 public interface IOnlineDictionaryDriver {
 
     String getName();
 
-    List<String> readDefinition(String word);
-
-    List<String> readTranslation(String word);
+    Set<String> readEntries(String word);
 
 }

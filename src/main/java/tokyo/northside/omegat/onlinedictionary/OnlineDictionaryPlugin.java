@@ -159,11 +159,9 @@ public final class OnlineDictionaryPlugin {
         public List<DictionaryEntry> readArticles(final String word) {
             List<DictionaryEntry> articles = new ArrayList<>();
             for (IOnlineDictionaryDriver driver : drivers) {
-                for (String definition : driver.readDefinition(word)) {
-                    articles.add(new DictionaryEntry(word, definition));
-                }
-                for (String translation: driver.readTranslation(word)) {
-                    articles.add(new DictionaryEntry(word, translation));
+                StringBuilder sb = new StringBuilder();
+                for (String entry : driver.readEntries(word)) {
+                    articles.add(new DictionaryEntry(word, entry + "(" + driver.getName() + ")"));
                 }
             }
             return articles;

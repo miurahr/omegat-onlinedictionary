@@ -29,8 +29,7 @@ import org.omegat.util.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import tokyo.northside.omegat.utils.OnlineDictionaryEntry;
-import tokyo.northside.omegat.utils.OnlineDictionaryMultiMap;
+import tokyo.northside.omegat.utils.MultiMap;
 import tokyo.northside.omegat.utils.QueryUtil;
 import tokyo.northside.omegawiki.ExpressionParser;
 import tokyo.northside.omegawiki.dtd.OmegawikiMeaning;
@@ -41,10 +40,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class OmegawikiDriver implements IOnlineDictionaryDriver {
@@ -55,7 +51,8 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
     private Language source;
     private Language target;
     private Map<String, String> languageMap;
-    private final OnlineDictionaryMultiMap cache = new OnlineDictionaryMultiMap();
+    private final MultiMap cache = new MultiMap();
+    private final MultiMap dmidMap = new MultiMap();
 
     public OmegawikiDriver(final String endpointUrl, final Language source, final Language target) throws IOException {
         this.endpointUrl = endpointUrl;
@@ -80,50 +77,30 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
     }
 
     @Override
-    public List<String> readDefinition(final String word) {
-        List<String> list = new ArrayList<>();
+    public Set<String> readEntries(final String word) {
         List<OmegawikiDefinition> definitions = queryExpression(word);
-        List<OmegawikiMeaning> meanings = querySyntrans(word);
         for (OmegawikiDefinition def : definitions) {
             if (isSameLanguage(def.getLangid(), source)) {
-                String dmid = def.getDmid();
-                OnlineDictionaryEntry entry = new OnlineDictionaryEntry(dmid, def.getDefinition().getText());
-                for (OmegawikiMeaning meaning : meanings) {
-                    if (dmid.equals(meaning.getIm())) {
-                        entry.addTranslation(meaning.getE());
-                    }
-                }
-                cache.put(word, entry);
-                StringBuilder sb = new StringBuilder();
-                for (String definition : entry.getDefinitions()) {
-                    sb.append(definition);
-                    sb.append("/");
-                }
-                sb.append(" - ");
-                for (String translation : entry.getTranslations()) {
-                    sb.append(translation);
-                    sb.append("/");
-                }
-                list.add(sb.toString());
+                dmidMap.put(word, def.getDmid());
+                String text = def.getDefinition().getText();
+                cache.put(word, text);
             }
         }
-        return list;
+        List<OmegawikiMeaning> meanings = querySyntrans(word);
+        for (OmegawikiMeaning meaning : meanings) {
+            cache.put(word, meaning.getE());
+        }
+        return cache.getValues(word);
    }
-
-    @Override
-    public List<String> readTranslation(String word) {
-        return new ArrayList<>();
-    }
 
     protected List<OmegawikiMeaning> querySyntrans(final String word) {
         List<OmegawikiMeaning> meanings = new ArrayList<>();
         String queryUrlBase = endpointUrl.concat("?action=ow_syntrans&format=json&dm=").concat(word);
-        if (!cache.containsKey(word)) {
+        if (!dmidMap.containsKey(word)) {
             queryExpression(word);
         }
-        if (!cache.containsKey(word)) {
-            for (OnlineDictionaryEntry entry : cache.getValues(word)) {
-                String dmid = entry.getSenseId();
+        if (!dmidMap.containsKey(word)) {
+            for (String dmid : dmidMap.getValues(word)) {
                 String queryUrl = queryUrlBase.concat(dmid);
                 String resultJson = null;
                 try {

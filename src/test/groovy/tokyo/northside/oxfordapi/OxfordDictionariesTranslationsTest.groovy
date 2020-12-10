@@ -12,22 +12,22 @@ class OxfordDictionariesTranslationsTest {
     void testTranslationsParse1() {
         InputStream resource = OxfordDictionaryParser.class.getClassLoader().getResourceAsStream("oxfordapi/translation_result1.json")
         def json = IOUtils.toString(resource, "UTF-8")
-        def parser = new OxfordDictionaryParser("documentation")
+        def parser = new OxfordDictionaryParser("ace")
         parser.parse(json)
         def results = parser.getResults()
         def result = results.get(0)
-        assertEquals("documentation", result.getId())
+        assertEquals("ace", result.getId())
         def lexicalEntries = result.getLexicalEntries()
         assertEquals("en", lexicalEntries.get(0).getLanguage())
-        assertEquals("documentation", lexicalEntries.get(0).getText())
+        assertEquals("ace", lexicalEntries.get(0).getText())
         def entries = lexicalEntries.get(0).getEntries()
         assert(entries.size() == 1)
         def senses = entries.get(0).getSenses()
-        assert(senses.size() == 2)
-        assertEquals("b-en-de0010238.002", senses.get(0).getId())
+        assert(senses.size() == 3)
+        assertEquals("b-en-es0000347.002", senses.get(0).getId())
         def translations = senses.get(0).getTranslations()
         assert(translations.size() == 1)
-        assertEquals("Dokumentation", translations.get(0).getText())
+        assertEquals("as", translations.get(0).getText())
     }
 
 }
