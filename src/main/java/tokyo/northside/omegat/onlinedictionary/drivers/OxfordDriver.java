@@ -53,13 +53,13 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
 
     @Override
     public String getName() {
-        return "Oxford Dictionaries(ONLINE)";
+        return "Oxford Dictionaries API";
     }
 
     @Override
     public Set<String> readEntries(final String word) {
-        Set<String> returnValue = new HashSet<>();
         if (!cache.containsKey(word)) {
+            StringBuilder sb = new StringBuilder();
             List<Result> results = query(getEntriesRequestUrl(word, false), word);
             List<Result> translations = query(getTranslationsRequestUrl(word, false), word);
             for (Result result : results) {
@@ -68,8 +68,8 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
                         for (Sense sense : entry.getSenses()) {
                             if (sense.getDefinitions() == null) continue;
                             for (String text : sense.getDefinitions()) {
-                                returnValue.add(text);
-                                cache.put(word, text);
+                                sb.append(text);
+                                sb.append("/");
                             }
                         }
                     }
@@ -81,13 +81,15 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
                         for (Sense sense1 : entry1.getSenses()) {
                             if (sense1.getTranslations() == null) continue;
                             for (Translation translation : sense1.getTranslations()) {
-                                returnValue.add(translation.getText());
-                                cache.put(word, translation.getText());
+                                sb.append("/");
+                                sb.append(translation.getText());
                             }
                         }
                     }
                 }
             }
+            String text = sb.toString();
+            cache.put(word, text);
         }
         return cache.getValues(word);
     }

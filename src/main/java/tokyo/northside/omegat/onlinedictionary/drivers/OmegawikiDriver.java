@@ -78,17 +78,22 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
     @Override
     public Set<String> readEntries(final String word) {
-        List<OmegawikiDefinition> definitions = queryExpression(word);
-        for (OmegawikiDefinition def : definitions) {
-            if (isSameLanguage(def.getLangid(), source)) {
-                dmidMap.put(word, def.getDmid());
-                String text = def.getDefinition().getText();
-                cache.put(word, text);
+        if (!cache.containsKey(word)) {
+            StringBuilder sb = new StringBuilder();
+            List<OmegawikiDefinition> definitions = queryExpression(word);
+            for (OmegawikiDefinition def : definitions) {
+                if (isSameLanguage(def.getLangid(), source)) {
+                    dmidMap.put(word, def.getDmid());
+                    String text = def.getDefinition().getText();
+                    sb.append(text);
+                    sb.append("/");
+                }
             }
-        }
-        List<OmegawikiMeaning> meanings = querySyntrans(word);
-        for (OmegawikiMeaning meaning : meanings) {
-            cache.put(word, meaning.getE());
+            List<OmegawikiMeaning> meanings = querySyntrans(word);
+            for (OmegawikiMeaning meaning : meanings) {
+                sb.append("/");
+                sb.append(meaning.getE());
+            }
         }
         return cache.getValues(word);
    }
