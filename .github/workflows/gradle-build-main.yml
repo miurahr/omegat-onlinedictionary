@@ -18,6 +18,9 @@ jobs:
       name: gradle test
       with:
         arguments: test jacocoTestReport
+      env:
+        OXFORDKEY: ${{secrets.OXFORDKEY}}
+        OXFORDID: ${{secrets.OXFORDID}}
     - name: Coveralls Test Report
       run: ./gradlew coveralls
       env:
