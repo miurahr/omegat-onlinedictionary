@@ -105,7 +105,7 @@ public final class OnlineDictionaryPlugin {
          */
         @Override
         public boolean isSupportedFile(final File file) {
-            if (file.isFile() && file.toPath().endsWith("service.yml")) {
+            if (file.isFile() && file.toPath().toString().endsWith("service.yml")) {
                 OnlineDictionaryService service = getService(file);
                 return service != null && SUPPORTED_DRIVERS.contains(service.getDriver());
             }
@@ -146,10 +146,9 @@ public final class OnlineDictionaryPlugin {
         public OnlineDictionary(final OnlineDictionaryService service,
                                 final Language source, final Language target) throws Exception {
             if ("omegawiki".equals(service.getDriver())) {
-                drivers.add(new OmegawikiDriver(service.getEndpointUrl(), source, target));
+                drivers.add(new OmegawikiDriver(service, source, target));
             } else if ("oxfordapi".equals(service.getDriver())) {
-                drivers.add(new OxfordDriver(service.getEndpointUrl(), service.getKey(), service.getSecret(),
-                        source, target));
+                drivers.add(new OxfordDriver(service, source, target));
             } else {
                 throw new Exception("Unknown driver");
             }

@@ -9,19 +9,25 @@ import static org.junit.Assert.*
 
 class OnlineDictionaryMainTest {
 
-    def resource = OnlineDictionaryPlugin.OnlineDictionaryMain.class.getClassLoader().getResource("service.yml")
-
-    @Test
-    void constructorTest() {
-        def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("es"))
-        assertTrue(onlineDictionary.isSupportedFile(new File(resource.toURI())))
-    }
+    def resource = OnlineDictionaryPlugin.OnlineDictionaryMain.class.getClassLoader().getResource("oxford_service.yml")
+    def appId = System.getenv("OXFORDID")
+    def appKey = System.getenv("OXFORDKEY")
 
     @Test
     void onlineDictionaryGetServices() {
         def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("es"))
         def service = onlineDictionary.getService(new File(resource.toURI()))
         assertNotNull(service)
+    }
+
+    @Test
+    void isSupportedFile() {
+        def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("es"))
+        assertTrue(new File(resource.toURI()).isFile())
+        assertTrue(new File(resource.toURI()).toPath().toString().endsWith("service.yml"))
+        def service = onlineDictionary.getService(new File(resource.toURI()))
+        assertEquals("oxfordapi", service.getDriver())
+        assertTrue(onlineDictionary.isSupportedFile(new File(resource.toURI())))
     }
 
     @Test
@@ -33,11 +39,16 @@ class OnlineDictionaryMainTest {
 
     @Test
     void onlineDictionarySearch() {
-        def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain(new Language("en"), new Language("it"))
-        def dictionary = onlineDictionary.loadDict(new File(resource.toURI()))
+        def source = new Language("en")
+        def target = new Language("it")
+        def onlineDictionary = new OnlineDictionaryPlugin.OnlineDictionaryMain()
+        def service = onlineDictionary.getService(new File(resource.toURI()))
+        service.setKey(appId)
+        service.setSecret(appKey)
+        def dictionary = new OnlineDictionaryPlugin.OnlineDictionary(service, source, target);
         def definitions = dictionary.readArticles("translation")
-        def entry = definitions.get(2)
+        def entry = definitions.get(0)
         assertEquals("translation", entry.getWord())
-        assertEquals("Move of an object to a new location without change in the size or orientation of an object.", entry.getArticle())
+        assertEquals("the process of translating words or text from one language into another/the process of moving something from one place to another//traduzione(Oxford)", entry.getArticle())
     }
 }

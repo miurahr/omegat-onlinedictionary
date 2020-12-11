@@ -23,6 +23,7 @@ import org.apache.hc.client5.http.ClientProtocolException;
 import org.omegat.util.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tokyo.northside.omegat.onlinedictionary.dtd.OnlineDictionaryService;
 import tokyo.northside.omegat.utils.MultiMap;
 import tokyo.northside.omegat.utils.QueryUtil;
 import tokyo.northside.oxfordapi.dtd.*;
@@ -38,22 +39,23 @@ public class OxfordDriver implements IOnlineDictionaryDriver {
     private final String appId;
     private final String appKey;
     private final String endpointUrl;
+    private final String name;
     private final Language source;
     private final Language target;
     private final MultiMap cache = new MultiMap();
 
-    public OxfordDriver(final String endpointUrl, final String key, final String secret,
-                        final Language source, final Language target) {
-        this.endpointUrl = endpointUrl;
-        this.appId = key;
-        this.appKey = secret;
+    public OxfordDriver(final OnlineDictionaryService service, final Language source, final Language target) {
+        endpointUrl = service.getEndpointUrl();
+        appId = service.getKey();
+        appKey = service.getSecret();
+        name = service.getName();
         this.source = source;
         this.target = target;
     }
 
     @Override
     public String getName() {
-        return "Oxford Dictionaries API";
+        return name;
     }
 
     @Override

@@ -1,0 +1,2540 @@
+[
+  {
+    "Title": "plum",
+    "TitleMarkup": [
+      {
+        "IsItalics": false,
+        "IsAccent": false,
+        "Node": "Text",
+        "Text": "plum",
+        "IsOptional": false
+      }
+    ],
+    "Dictionary": "LingvoUniversal (En-Ru)",
+    "ArticleId": "LingvoUniversal (En-Ru)__plum",
+    "Body": [
+      {
+        "Markup": [
+          {
+            "Node": "Transcription",
+            "Text": "plʌm",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": " ",
+            "IsOptional": false
+          },
+          {
+            "FullText": "британский вариант английского языка; употребляется в Великобритании",
+            "Node": "Abbrev",
+            "Text": "брит.",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": " ",
+            "IsOptional": false
+          },
+          {
+            "FileName": "plum.wav",
+            "Node": "Sound",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": " / ",
+            "IsOptional": false
+          },
+          {
+            "FullText": "американский вариант английского языка; употребляется в США",
+            "Node": "Abbrev",
+            "Text": "амер.",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": " ",
+            "IsOptional": false
+          },
+          {
+            "FileName": "9612.wav",
+            "Node": "Sound",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "Paragraph",
+        "Text": null,
+        "IsOptional": false
+      },
+      {
+        "Type": 1,
+        "Items": [
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "FullText": "имя существительное",
+                    "Node": "Abbrev",
+                    "Text": "сущ.",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              },
+              {
+                "Type": 3,
+                "Items": [
+                  {
+                    "Markup": [
+                      {
+                        "Type": 4,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "FullText": "ботаника",
+                                    "Node": "Abbrev",
+                                    "Text": "бот.",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "; = plum tree ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "слива ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(",
+                                        "IsOptional": false
+                                      },
+                                      {
+                                        "FullText": "латинский язык",
+                                        "Node": "Abbrev",
+                                        "Text": "лат.",
+                                        "IsOptional": false
+                                      },
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "Prunus; ",
+                                        "IsOptional": false
+                                      },
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "вид плодового дерева)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "слива ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(плод)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              },
+                              {
+                                "Type": null,
+                                "Items": [
+                                  {
+                                    "Markup": [
+                                      {
+                                        "Dictionary": "LingvoUniversal (En-Ru)",
+                                        "ArticleId": "LingvoUniversal (En-Ru)__French plum",
+                                        "Node": "CardRef",
+                                        "Text": "French plum",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "CardRefItem",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "CardRefs",
+                                "Text": null,
+                                "IsOptional": true
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "List",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Type": 4,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "изюм",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "сорт десертного винограда ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(предназначенный для изготовления изюма)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "FullText": "американский вариант английского языка; употребляется в США",
+                                    "Node": "Abbrev",
+                                    "Text": "амер.",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "круглый леденец ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(по форме напоминающий сливу)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              },
+                              {
+                                "Node": "Caption",
+                                "Text": "Syn:",
+                                "IsOptional": true
+                              },
+                              {
+                                "Markup": [
+                                  {
+                                    "Dictionary": "LingvoUniversal (En-Ru)",
+                                    "ArticleId": "LingvoUniversal (En-Ru)__sugarplum",
+                                    "Node": "CardRef",
+                                    "Text": "sugarplum",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": true
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "List",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "лакомый кусочек; нечто самое лучшее; сливки",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Type": null,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "to pick / take the plum ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "— снимать сливки, отбирать самое лучшее",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Example",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ExampleItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Examples",
+                        "Text": null,
+                        "IsOptional": true
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "FullText": "американский вариант английского языка; употребляется в США",
+                            "Node": "Abbrev",
+                            "Text": "амер.",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "; ",
+                            "IsOptional": false
+                          },
+                          {
+                            "FullText": "разговорное",
+                            "Node": "Abbrev",
+                            "Text": "разг.",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Type": 4,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "доходное место",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              },
+                              {
+                                "Type": null,
+                                "Items": [
+                                  {
+                                    "Markup": [
+                                      {
+                                        "Markup": [
+                                          {
+                                            "IsItalics": false,
+                                            "IsAccent": false,
+                                            "Node": "Text",
+                                            "Text": "plum job ",
+                                            "IsOptional": false
+                                          },
+                                          {
+                                            "IsItalics": false,
+                                            "IsAccent": false,
+                                            "Node": "Text",
+                                            "Text": "— тёплое местечко",
+                                            "IsOptional": false
+                                          }
+                                        ],
+                                        "Node": "Example",
+                                        "Text": null,
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "ExampleItem",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Examples",
+                                "Text": null,
+                                "IsOptional": true
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "выгодный заказ ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(особенно предоставляемый за оказанную услугу)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "List",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "тёмно-фиолетовый цвет ",
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "IsItalics": true,
+                                "IsAccent": false,
+                                "Node": "Text",
+                                "Text": "(с оттенками бордового)",
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "Comment",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Type": null,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "to wait for the plums to fall into one's mouth ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "— ждать, что сливы сами в рот посыплются; ждать, что поднесут всё на блюдечке",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Example",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ExampleItem",
+                            "Text": null,
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "to speak with a plum in one's mouth ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "FullText": "неодобрительное",
+                                    "Node": "Abbrev",
+                                    "Text": "неодобр.",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": true,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "; ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "FullText": "британский вариант английского языка; употребляется в Великобритании",
+                                    "Node": "Abbrev",
+                                    "Text": "брит.",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "— иметь характерное для высших слоёв общества произношение",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Example",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ExampleItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Examples",
+                        "Text": null,
+                        "IsOptional": true
+                      },
+                      {
+                        "Type": null,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Dictionary": "LingvoUniversal (En-Ru)",
+                                "ArticleId": "LingvoUniversal (En-Ru)__plum the plum-tree",
+                                "Node": "CardRef",
+                                "Text": "plum the plum-tree",
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "CardRefItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "CardRefs",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "List",
+                "Text": null,
+                "IsOptional": false
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "FullText": "имя прилагательное",
+                    "Node": "Abbrev",
+                    "Text": "прил.",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              },
+              {
+                "Type": 3,
+                "Items": [
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "FullText": "устаревшее",
+                            "Node": "Abbrev",
+                            "Text": "уст.",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "полный, тучный",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Type": null,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "His face was fat and plum. ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "— У него было полное округлое лицо.",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Example",
+                                "Text": null,
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "ExampleItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Examples",
+                        "Text": null,
+                        "IsOptional": true
+                      },
+                      {
+                        "Node": "Caption",
+                        "Text": "Syn:",
+                        "IsOptional": true
+                      },
+                      {
+                        "Markup": [
+                          {
+                            "Dictionary": "LingvoUniversal (En-Ru)",
+                            "ArticleId": "LingvoUniversal (En-Ru)__fat",
+                            "Node": "CardRef",
+                            "Text": "fat",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": true
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "FullText": "диалектное",
+                            "Node": "Abbrev",
+                            "Text": "диал.",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Type": 4,
+                        "Items": [
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "мягкий ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(о подушке)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              },
+                              {
+                                "Node": "Caption",
+                                "Text": "Syn:",
+                                "IsOptional": true
+                              },
+                              {
+                                "Markup": [
+                                  {
+                                    "Dictionary": "LingvoUniversal (En-Ru)",
+                                    "ArticleId": "LingvoUniversal (En-Ru)__soft",
+                                    "Node": "CardRef",
+                                    "Text": "soft",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": true
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "пышный, хорошо подходящий ",
+                                    "IsOptional": false
+                                  },
+                                  {
+                                    "Markup": [
+                                      {
+                                        "IsItalics": true,
+                                        "IsAccent": false,
+                                        "Node": "Text",
+                                        "Text": "(о тесте)",
+                                        "IsOptional": false
+                                      }
+                                    ],
+                                    "Node": "Comment",
+                                    "Text": null,
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": false
+                              },
+                              {
+                                "Node": "Caption",
+                                "Text": "Syn:",
+                                "IsOptional": true
+                              },
+                              {
+                                "Markup": [
+                                  {
+                                    "IsItalics": false,
+                                    "IsAccent": false,
+                                    "Node": "Text",
+                                    "Text": "well-raised",
+                                    "IsOptional": false
+                                  }
+                                ],
+                                "Node": "Paragraph",
+                                "Text": null,
+                                "IsOptional": true
+                              }
+                            ],
+                            "Node": "ListItem",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "List",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "ковкий, гибкий, податливый ",
+                            "IsOptional": false
+                          },
+                          {
+                            "Markup": [
+                              {
+                                "IsItalics": true,
+                                "IsAccent": false,
+                                "Node": "Text",
+                                "Text": "(о металле, камне)",
+                                "IsOptional": false
+                              }
+                            ],
+                            "Node": "Comment",
+                            "Text": null,
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Node": "Caption",
+                        "Text": "Syn:",
+                        "IsOptional": true
+                      },
+                      {
+                        "Markup": [
+                          {
+                            "Dictionary": "LingvoUniversal (En-Ru)",
+                            "ArticleId": "LingvoUniversal (En-Ru)__soft",
+                            "Node": "CardRef",
+                            "Text": "soft",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Paragraph",
+                        "Text": null,
+                        "IsOptional": true
+                      }
+                    ],
+                    "Node": "ListItem",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "List",
+                "Text": null,
+                "IsOptional": false
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "List",
+        "Text": null,
+        "IsOptional": false
+      }
+    ]
+  },
+  {
+    "Title": "plum",
+    "TitleMarkup": [
+      {
+        "IsItalics": false,
+        "IsAccent": false,
+        "Node": "Text",
+        "Text": "plum",
+        "IsOptional": false
+      }
+    ],
+    "Dictionary": "Learning (En-Ru)",
+    "ArticleId": "Learning (En-Ru)__plum",
+    "Body": [
+      {
+        "Markup": [
+          {
+            "Node": "Transcription",
+            "Text": "plʌm",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": " ",
+            "IsOptional": false
+          },
+          {
+            "FileName": "plum.wav",
+            "Node": "Sound",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "Paragraph",
+        "Text": null,
+        "IsOptional": false
+      },
+      {
+        "Markup": [
+          {
+            "FullText": "имя существительное",
+            "Node": "Abbrev",
+            "Text": "n",
+            "IsOptional": false
+          }
+        ],
+        "Node": "Paragraph",
+        "Text": null,
+        "IsOptional": false
+      },
+      {
+        "Type": 3,
+        "Items": [
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "сл",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "и",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "ва",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              },
+              {
+                "Type": null,
+                "Items": [
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "stewed plums ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "— комп",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "о",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "т из слив",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Example",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ExampleItem",
+                    "Text": null,
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "plum jam/trees ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "— ",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Example",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": true,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "как ",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Comment",
+                        "Text": null,
+                        "IsOptional": false
+                      },
+                      {
+                        "Markup": [
+                          {
+                            "FullText": "имя прилагательное",
+                            "Node": "Abbrev",
+                            "Text": "прил.",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "сл",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "и",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "вовый джем, -ые дер",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "е",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "вья",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Example",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ExampleItem",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Examples",
+                "Text": null,
+                "IsOptional": true
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "тёмно-фиол",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "е",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "товый цвет",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "FullText": "разговорное слово, выражение",
+                    "Node": "Abbrev",
+                    "Text": "разг.",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "лёгкая высокоопл",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "а",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "чиваемая раб",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "о",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "та, тёплое мест",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "е",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "чко",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              },
+              {
+                "Type": null,
+                "Items": [
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "his new job is a real plum ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "— у нег",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "о ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "раб",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "о",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "та - пр",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "о",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "сто мечт",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "а",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Example",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ExampleItem",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Examples",
+                "Text": null,
+                "IsOptional": true
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "List",
+        "Text": null,
+        "IsOptional": false
+      }
+    ]
+  },
+  {
+    "Title": "plum",
+    "TitleMarkup": [
+      {
+        "IsItalics": false,
+        "IsAccent": false,
+        "Node": "Text",
+        "Text": "plum",
+        "IsOptional": false
+      }
+    ],
+    "Dictionary": "Biology (En-Ru)",
+    "ArticleId": "Biology (En-Ru)__plum",
+    "Body": [
+      {
+        "Markup": [
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": "слива ",
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "IsItalics": false,
+                "IsAccent": false,
+                "Node": "Text",
+                "Text": "(",
+                "IsOptional": false
+              },
+              {
+                "IsItalics": true,
+                "IsAccent": false,
+                "Node": "Text",
+                "Text": "Prunus",
+                "IsOptional": false
+              },
+              {
+                "IsItalics": false,
+                "IsAccent": false,
+                "Node": "Text",
+                "Text": ")",
+                "IsOptional": false
+              }
+            ],
+            "Node": "Comment",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "Paragraph",
+        "Text": null,
+        "IsOptional": false
+      },
+      {
+        "Type": null,
+        "Items": [
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__apricot plum",
+                "Node": "CardRef",
+                "Text": "apricot plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__beach plum",
+                "Node": "CardRef",
+                "Text": "beach plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__big-tree plum",
+                "Node": "CardRef",
+                "Text": "big-tree plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__bunch plum",
+                "Node": "CardRef",
+                "Text": "bunch plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Canada plum",
+                "Node": "CardRef",
+                "Text": "Canada plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__cherry plum",
+                "Node": "CardRef",
+                "Text": "cherry plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__chickasaw plum",
+                "Node": "CardRef",
+                "Text": "chickasaw plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__coco plum",
+                "Node": "CardRef",
+                "Text": "coco plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__common plum",
+                "Node": "CardRef",
+                "Text": "common plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__creek plum",
+                "Node": "CardRef",
+                "Text": "creek plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__date plum",
+                "Node": "CardRef",
+                "Text": "date plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__fox plum",
+                "Node": "CardRef",
+                "Text": "fox plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__garden plum",
+                "Node": "CardRef",
+                "Text": "garden plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__goose plum",
+                "Node": "CardRef",
+                "Text": "goose plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__governor's plum",
+                "Node": "CardRef",
+                "Text": "governor's plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__hog plum",
+                "Node": "CardRef",
+                "Text": "hog plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__horse plum",
+                "Node": "CardRef",
+                "Text": "horse plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Indian plum",
+                "Node": "CardRef",
+                "Text": "Indian plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__ivory plum",
+                "Node": "CardRef",
+                "Text": "ivory plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Jambolan plum",
+                "Node": "CardRef",
+                "Text": "Jambolan plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__jungle plum",
+                "Node": "CardRef",
+                "Text": "jungle plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Kafir plum",
+                "Node": "CardRef",
+                "Text": "Kafir plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__low plum",
+                "Node": "CardRef",
+                "Text": "low plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__meal plum",
+                "Node": "CardRef",
+                "Text": "meal plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__myrobalan plum",
+                "Node": "CardRef",
+                "Text": "myrobalan plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__nanny plum",
+                "Node": "CardRef",
+                "Text": "nanny plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Natal plum",
+                "Node": "CardRef",
+                "Text": "Natal plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__pocket plums",
+                "Node": "CardRef",
+                "Text": "pocket plums",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Porter's plum",
+                "Node": "CardRef",
+                "Text": "Porter's plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__red plum",
+                "Node": "CardRef",
+                "Text": "red plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__sand plum",
+                "Node": "CardRef",
+                "Text": "sand plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__scarlet plum",
+                "Node": "CardRef",
+                "Text": "scarlet plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__sea-side plum",
+                "Node": "CardRef",
+                "Text": "sea-side plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__seeded plum",
+                "Node": "CardRef",
+                "Text": "seeded plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Simon plum",
+                "Node": "CardRef",
+                "Text": "Simon plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__Spanish plum",
+                "Node": "CardRef",
+                "Text": "Spanish plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__strawberry plum",
+                "Node": "CardRef",
+                "Text": "strawberry plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__tallowwood plum",
+                "Node": "CardRef",
+                "Text": "tallowwood plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__thorn plum",
+                "Node": "CardRef",
+                "Text": "thorn plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__western plum",
+                "Node": "CardRef",
+                "Text": "western plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__wild plum",
+                "Node": "CardRef",
+                "Text": "wild plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__wild garden plum",
+                "Node": "CardRef",
+                "Text": "wild garden plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Dictionary": "Biology (En-Ru)",
+                "ArticleId": "Biology (En-Ru)__winter plum",
+                "Node": "CardRef",
+                "Text": "winter plum",
+                "IsOptional": false
+              }
+            ],
+            "Node": "CardRefItem",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "CardRefs",
+        "Text": null,
+        "IsOptional": true
+      }
+    ]
+  },
+  {
+    "Title": "plum",
+    "TitleMarkup": [
+      {
+        "IsItalics": false,
+        "IsAccent": false,
+        "Node": "Text",
+        "Text": "plum",
+        "IsOptional": false
+      }
+    ],
+    "Dictionary": "Building (En-Ru)",
+    "ArticleId": "Building (En-Ru)__plum",
+    "Body": [
+      {
+        "Markup": [
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": "(",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": true,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": "особо",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": ") ",
+            "IsOptional": false
+          },
+          {
+            "IsItalics": false,
+            "IsAccent": false,
+            "Node": "Text",
+            "Text": "крупный заполнитель бетонной смеси, \"изюм\"",
+            "IsOptional": false
+          }
+        ],
+        "Node": "Paragraph",
+        "Text": null,
+        "IsOptional": false
+      }
+    ]
+  },
+  {
+    "Title": "plum",
+    "TitleMarkup": [
+      {
+        "IsItalics": false,
+        "IsAccent": false,
+        "Node": "Text",
+        "Text": "plum",
+        "IsOptional": false
+      }
+    ],
+    "Dictionary": "AmericanEnglish (En-Ru)",
+    "ArticleId": "AmericanEnglish (En-Ru)__plum",
+    "Body": [
+      {
+        "Type": 3,
+        "Items": [
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "сл",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "и",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "ва ",
+                    "IsOptional": false
+                  },
+                  {
+                    "FullText": "женский род",
+                    "Node": "Abbrev",
+                    "Text": "ж",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              },
+              {
+                "Type": null,
+                "Items": [
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "plum tomato ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "— п",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "а",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "льчиковый помид",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "о",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "р",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Example",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ExampleItem",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Examples",
+                "Text": null,
+                "IsOptional": true
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "FullText": "политика",
+                    "Node": "Abbrev",
+                    "Text": "полит",
+                    "IsOptional": false
+                  },
+                  {
+                    "FullText": "выражение (слово) из разговорной речи",
+                    "Node": "Abbrev",
+                    "Text": "разг",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "тёплое мест",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "е",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "чко, \"ж",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "и",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "рный кус",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": true,
+                    "Node": "Text",
+                    "Text": "о",
+                    "IsOptional": false
+                  },
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "к\" ",
+                    "IsOptional": false
+                  },
+                  {
+                    "Markup": [
+                      {
+                        "IsItalics": false,
+                        "IsAccent": false,
+                        "Node": "Text",
+                        "Text": "(",
+                        "IsOptional": false
+                      },
+                      {
+                        "IsItalics": true,
+                        "IsAccent": false,
+                        "Node": "Text",
+                        "Text": "доходное место, выгодный заказ и т.п.",
+                        "IsOptional": false
+                      },
+                      {
+                        "IsItalics": false,
+                        "IsAccent": false,
+                        "Node": "Text",
+                        "Text": ")",
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "Comment",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              },
+              {
+                "Type": null,
+                "Items": [
+                  {
+                    "Markup": [
+                      {
+                        "Markup": [
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "the job is a real plum ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "— ",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "э",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "то по",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "и",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "стине тёпленькое мест",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": true,
+                            "Node": "Text",
+                            "Text": "е",
+                            "IsOptional": false
+                          },
+                          {
+                            "IsItalics": false,
+                            "IsAccent": false,
+                            "Node": "Text",
+                            "Text": "чко",
+                            "IsOptional": false
+                          }
+                        ],
+                        "Node": "Example",
+                        "Text": null,
+                        "IsOptional": false
+                      }
+                    ],
+                    "Node": "ExampleItem",
+                    "Text": null,
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Examples",
+                "Text": null,
+                "IsOptional": true
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "List",
+        "Text": null,
+        "IsOptional": false
+      }
+    ]
+  },
+  {
+    "Title": "plum",
+    "TitleMarkup": [
+      {
+        "IsItalics": false,
+        "IsAccent": false,
+        "Node": "Text",
+        "Text": "plum",
+        "IsOptional": false
+      }
+    ],
+    "Dictionary": "MenuReader (En-Ru)",
+    "ArticleId": "MenuReader (En-Ru)__plum",
+    "Body": [
+      {
+        "Type": 3,
+        "Items": [
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "слива",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          },
+          {
+            "Markup": [
+              {
+                "Markup": [
+                  {
+                    "IsItalics": false,
+                    "IsAccent": false,
+                    "Node": "Text",
+                    "Text": "сливовый",
+                    "IsOptional": false
+                  }
+                ],
+                "Node": "Paragraph",
+                "Text": null,
+                "IsOptional": false
+              }
+            ],
+            "Node": "ListItem",
+            "Text": null,
+            "IsOptional": false
+          }
+        ],
+        "Node": "List",
+        "Text": null,
+        "IsOptional": false
+      }
+    ]
+  }
+]

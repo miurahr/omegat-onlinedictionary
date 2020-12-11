@@ -2,6 +2,7 @@ package tokyo.northside.omegat.onlinedictionary.drivers
 
 import org.omegat.util.Language
 import org.junit.Test
+import tokyo.northside.omegat.onlinedictionary.dtd.OnlineDictionaryService
 
 import static org.junit.Assert.*
 
@@ -14,7 +15,10 @@ class OxfordDriverTest {
 
     @Test
     void constructorTest() {
-        OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("es"))
+        def service = new OnlineDictionaryService("Oxford", endpointUrl, "oxfordapi")
+        service.setKey(appId)
+        service.setSecret(appKey)
+        def driver = new OxfordDriver(service, new Language("en"), new Language("es"))
         def requestUrl = driver.getEntriesRequestUrl("ace", false);
         def results = driver.query(requestUrl, "ace")
         assert(results.size() > 0)
@@ -23,9 +27,12 @@ class OxfordDriverTest {
 
     @Test
     void readDefinitionTest() {
-        OxfordDriver driver = new OxfordDriver(endpointUrl, appId, appKey, new Language("en"), new Language("ja"))
+        def service = new OnlineDictionaryService("Oxford", endpointUrl, "oxfordapi")
+        service.setKey(appId)
+        service.setSecret(appKey)
+        OxfordDriver driver = new OxfordDriver(service, new Language("en"), new Language("ja"))
         def entries = driver.readEntries("software")
         assert(entries.size() > 0)
-        assert(entries.contains("the programs and other operating information used by a computer"))
+        assert(entries.contains("the programs and other operating information used by a computer/"))
     }
 }

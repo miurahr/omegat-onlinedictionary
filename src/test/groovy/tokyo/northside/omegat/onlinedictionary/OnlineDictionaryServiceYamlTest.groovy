@@ -11,7 +11,7 @@ import static org.junit.Assert.*
 
 class OnlineDictionaryServiceYamlTest {
 
-    def resource = OnlineDictionaryPlugin.OnlineDictionaryMain.class.getClassLoader().getResource("service.yml")
+    def resource = OnlineDictionaryPlugin.OnlineDictionaryMain.class.getClassLoader().getResource("omegawiki_service.yml")
 
     @Test
     void readYamlTest() throws Exception {

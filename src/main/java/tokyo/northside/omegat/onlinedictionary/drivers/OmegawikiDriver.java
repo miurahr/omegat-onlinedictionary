@@ -29,6 +29,7 @@ import org.omegat.util.Language;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import tokyo.northside.omegat.onlinedictionary.dtd.OnlineDictionaryService;
 import tokyo.northside.omegat.utils.MultiMap;
 import tokyo.northside.omegat.utils.QueryUtil;
 import tokyo.northside.omegawiki.ExpressionParser;
@@ -47,15 +48,17 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
     private Logger LOGGER = LoggerFactory.getLogger(OmegawikiDriver.class.getName());
 
-    private String endpointUrl;
+    private final String endpointUrl;
+    private final String name;
     private Language source;
     private Language target;
     private Map<String, String> languageMap;
     private final MultiMap cache = new MultiMap();
     private final MultiMap dmidMap = new MultiMap();
 
-    public OmegawikiDriver(final String endpointUrl, final Language source, final Language target) throws IOException {
-        this.endpointUrl = endpointUrl;
+    public OmegawikiDriver(final OnlineDictionaryService service, final Language source, final Language target) throws IOException {
+        endpointUrl = service.getEndpointUrl();
+        name = service.getName();
         this.source = source;
         this.target = target;
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
@@ -73,7 +76,7 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
 
     @Override
     public String getName() {
-        return "OmegaWiki";
+        return name;
     }
 
     @Override

@@ -2,6 +2,7 @@ package tokyo.northside.omegat.onlinedictionary.drivers
 
 import org.omegat.util.Language
 import org.junit.Test
+import tokyo.northside.omegat.onlinedictionary.dtd.OnlineDictionaryService
 import tokyo.northside.omegat.utils.QueryUtil
 
 import static org.junit.Assert.*
@@ -11,13 +12,15 @@ class OmegawikiDriverTest {
 
     @Test
     void constructorTest() {
-        def driver = new OmegawikiDriver(endpointUrl, new Language("en"), new Language("es"))
+        def service = new OnlineDictionaryService("OmegaWiki", endpointUrl, "omegawiki")
+        def driver = new OmegawikiDriver(service, new Language("en"), new Language("es"))
         assertNotNull(driver)
     }
 
     @Test
     void getNameTest() {
-        def driver = new OmegawikiDriver(endpointUrl, new Language("en"), new Language("es"))
+        def service = new OnlineDictionaryService("OmegaWiki", endpointUrl, "omegawiki")
+        def driver = new OmegawikiDriver(service, new Language("en"), new Language("es"))
         assertEquals("OmegaWiki", driver.getName())
     }
 
@@ -31,14 +34,16 @@ class OmegawikiDriverTest {
 
     @Test
     void getQueryExpression() {
-        def driver = new OmegawikiDriver(endpointUrl, new Language("en"), new Language("es"))
+        def service = new OnlineDictionaryService("OmegaWiki", endpointUrl, "omegawiki")
+        def driver = new OmegawikiDriver(service, new Language("en"), new Language("es"))
         def expressions = driver.queryExpression("translate")
         assertEquals("English", expressions.get(0).lang)
     }
 
     @Test
     void getDefinition() {
-        def driver = new OmegawikiDriver(endpointUrl, new Language("en"), new Language("es"))
+        def service = new OnlineDictionaryService("OmegaWiki", endpointUrl, "omegawiki")
+        def driver = new OmegawikiDriver(service, new Language("en"), new Language("es"))
         def definitions = driver.readEntries("translate")
         assertNotNull(definitions)
     }

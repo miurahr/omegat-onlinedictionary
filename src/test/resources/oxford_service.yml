@@ -1,5 +1,5 @@
 ---
-name: oxford dictionary api
+name: Oxford
 endpointUrl: https://od-api.oxforddictionaries.com/api/v2/
 driver: oxfordapi
 key: "aa5cff0a"
