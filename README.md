@@ -4,23 +4,23 @@ This is experimental implementation of online dictionary search plugin for Omega
 Current status is `ALPHA`.
 
 - OmegaWiki
-- Oxford dictionary API
+- Oxford dictionaries API
 
-When using the plugin, you should put snippet yaml file(service.yml) in the OmegaT project
-folder's dictionary directory.
+When using the plugin, you should put config yaml file, which name should end with service.yml,
+in `dictionary` directory of OmegaT project.
 
 For OmegaWiki search:
 
 ```
 ---
-name: omegawiki: free multilingual dictionary
+name: OmegaWiki
 endpointUrl: http://omegawiki.org/api.php
 driver: omegawiki
 key:
 secret:
 ```
 
-For Oxford Dictionary API search:
+For Oxford Dictionaries API search:
 
 ```
 ---
