@@ -30,8 +30,7 @@ import org.omegat.core.dictionaries.IDictionaryFactory;
 import org.omegat.core.events.IApplicationEventListener;
 import org.omegat.util.Language;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import tokyo.northside.omegat.onlinedictionary.drivers.DictDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.IOnlineDictionaryDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.OmegawikiDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.OxfordDriver;
@@ -89,6 +88,7 @@ public final class OnlineDictionaryPlugin {
         static {
             SUPPORTED_DRIVERS.add("omegawiki");
             SUPPORTED_DRIVERS.add("oxfordapi");
+            SUPPORTED_DRIVERS.add("rfc2229");
         }
 
         public OnlineDictionaryMain() { }
@@ -149,6 +149,8 @@ public final class OnlineDictionaryPlugin {
                 drivers.add(new OmegawikiDriver(service, source, target));
             } else if ("oxfordapi".equals(service.getDriver())) {
                 drivers.add(new OxfordDriver(service, source, target));
+            } else if ("rfx2229".equals(service.getDriver())) {
+                drivers.add(new DictDriver(service, source, target));
             } else {
                 throw new Exception("Unknown driver");
             }

@@ -1,0 +1,6 @@
+---
+name: DICTD
+endpointUrl: tcp://localhost:2628/
+driver: rfc2229
+key:
+secret:
