@@ -8,13 +8,18 @@ plugins {
     id("com.github.kt3k.coveralls") version "2.10.2"
     id("org.omegat.gradle") version "1.4.2"
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.5"
+    id("com.sarhanm.versioner") version "4.0.2"
 }
 
 group = "tokyo.northside"
-version = "0.3.0"
+versioner {
+    snapshot=false
+    omitBranchMetadata=true
+    disableHotfixVersioning=true
+}
 
 omegat {
-    version = "5.3.0"
+    version = "5.4.1"
     pluginClass = "tokyo.northside.omegat.onlinedictionary.OnlineDictionaryPlugin"
     // projectDir = File(project.projectDir, "test-project").toString()
 }
