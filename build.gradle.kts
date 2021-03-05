@@ -71,7 +71,7 @@ tasks.distTar {
 distributions {
     main {
         contents {
-            from("README.md", "CHANGELOG.md", "COPYING")
+            from(tasks["jar"], "README.md", "CHANGELOG.md", "COPYING")
         }
     }
 }
