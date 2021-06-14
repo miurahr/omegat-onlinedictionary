@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v0.3.2]
+
 ### Added
 - Release jar file to github releases
 
@@ -41,7 +43,8 @@ All notable changes to this project will be documented in this file.
 
 * First alpha release.
 
-[Unreleased]: https://github.com/miurahr/omegat-onlinedictionary/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/miurahr/omegat-onlinedictionary/compare/v0.3.2...HEAD
+[v0.3.2]: https://github.com/miurahr/omegat-onlinedictionary/compare/v0.3.1...v0.3.2
 [v0.3.1]: https://github.com/miurahr/omegat-onlinedictionary/compare/v0.3.0...v0.3.1
 [v0.3.0]: https://github.com/miurahr/omegat-onlinedictionary/compare/v0.1.0...v0.3.0
 [v0.1.0]: https://github.com/miurahr/omegat-onlinedictionary/compare/v0.0.1...v0.1.0
