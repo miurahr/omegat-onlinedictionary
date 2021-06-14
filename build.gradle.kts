@@ -7,7 +7,7 @@ plugins {
     id("com.diffplug.gradle.spotless") version "3.27.1"
     id("com.github.kt3k.coveralls") version "2.10.2"
     id("org.omegat.gradle") version "1.5.3"
-    id("com.github.nbaztec.coveralls-jacoco") version "1.2.5"
+    id("com.github.nbaztec.coveralls-jacoco") version "1.2.12"
     id("com.palantir.git-version") version "0.12.3"
 }
 
