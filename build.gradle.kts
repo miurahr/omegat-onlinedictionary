@@ -68,10 +68,6 @@ tasks {
     Unit
 }
 
-tasks.distTar {
-  compression = Compression.GZIP
-}
-
 distributions {
     main {
         contents {
