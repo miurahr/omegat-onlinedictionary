@@ -33,7 +33,7 @@ dependencies {
     packIntoJar("com.fasterxml.jackson.core:jackson-core:2.12.3")
     packIntoJar("com.fasterxml.jackson.core:jackson-databind:2.12.3")
     packIntoJar("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.3")
-    implementation("commons-io:commons-io:2.5")
+    implementation("commons-io:commons-io:2.10.0")
     implementation("commons-lang:commons-lang:2.6")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.2")
