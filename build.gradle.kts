@@ -20,6 +20,10 @@ if (getVersionDetails().isCleanTag) {
 }
 
 group = "tokyo.northside"
+configure<JavaPluginConvention> {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 omegat {
     version = "5.5.0"
