@@ -8,7 +8,7 @@ plugins {
     id("com.github.kt3k.coveralls") version "2.10.2"
     id("org.omegat.gradle") version "1.4.2"
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.5"
-    id("com.sarhanm.versioner") version "4.0.2"
+    id("com.sarhanm.versioner") version "4.1.7"
 }
 
 group = "tokyo.northside"
