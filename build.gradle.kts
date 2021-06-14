@@ -28,7 +28,7 @@ omegat {
 }
 
 dependencies {
-    packIntoJar("org.slf4j:slf4j-api:1.7.25")
+    packIntoJar("org.slf4j:slf4j-api:1.7.30")
     packIntoJar("org.apache.httpcomponents.client5:httpclient5:5.1")
     packIntoJar("com.fasterxml.jackson.core:jackson-core:2.12.3")
     packIntoJar("com.fasterxml.jackson.core:jackson-databind:2.12.3")
