@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
-- Release jar file on github releases
+- Release jar file to github releases
 
 ### Changed
 - Bump versions
@@ -12,7 +12,16 @@ All notable changes to this project will be documented in this file.
     * omegat-gradle@1.5.3
     * gradle.git-version@0.12.3
     * JUnit@5.7.2
+    * Spotless@5.13.0
+    * commons-io@2.7
+    * jackson@2.12.3
+    * coveralls-jacoco@1.12.12
+    * coveralls@2.12.0
+    * httpclient5@5.1
+    * actions/checkout@v2
+    * actions/setup-java@v2
 - Refer omegat@5.5.0
+- Change gradle versioner to com.palantir.git-version@0.12.3
   
 ### Removed
 - Drop jcenter reference
