@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Release jar file on github releases
+
+### Changed
+- Bump versions
+    * Gralde@6.9
+    * omegat-gradle@1.5.3
+    * gradle.git-version@0.12.3
+    * JUnit@5.7.2
+- Refer omegat@5.5.0
+  
+### Removed
+- Drop jcenter reference
+
 ## [v0.3.1]
 
 * Fix released package(zip, tgz) to include jar file.

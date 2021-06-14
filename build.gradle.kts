@@ -6,31 +6,30 @@ plugins {
     distribution
     id("com.diffplug.gradle.spotless") version "3.27.1"
     id("com.github.kt3k.coveralls") version "2.10.2"
-    id("org.omegat.gradle") version "1.4.2"
+    id("org.omegat.gradle") version "1.5.3"
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.5"
-    id("com.sarhanm.versioner") version "4.0.2"
+    id("com.palantir.git-version") version "0.12.3"
+}
+
+// calculate version string from git tag, hash and commit distance
+fun getVersionDetails(): com.palantir.gradle.gitversion.VersionDetails = (extra["versionDetails"] as groovy.lang.Closure<*>)() as com.palantir.gradle.gitversion.VersionDetails
+if (getVersionDetails().isCleanTag) {
+    version = getVersionDetails().lastTag.substring(1)
+} else {
+    version = getVersionDetails().lastTag.substring(1) + "-" + getVersionDetails().commitDistance + "-" + getVersionDetails().gitHash + "-SNAPSHOT"
 }
 
 group = "tokyo.northside"
-versioner {
-    snapshot=false
-    omitBranchMetadata=true
-    disableHotfixVersioning=true
-}
 
 omegat {
-    version = "5.4.1"
+    version = "5.5.0"
     pluginClass = "tokyo.northside.omegat.onlinedictionary.OnlineDictionaryPlugin"
     // projectDir = File(project.projectDir, "test-project").toString()
 }
 
-repositories {
-    jcenter()
-}
-
 dependencies {
     packIntoJar("org.slf4j:slf4j-api:1.7.25")
-    packIntoJar("org.apache.httpcomponents.client5:httpclient5:5.0.3")
+    packIntoJar("org.apache.httpcomponents.client5:httpclient5:5.1")
     packIntoJar("com.fasterxml.jackson.core:jackson-core:2.12.3")
     packIntoJar("com.fasterxml.jackson.core:jackson-databind:2.12.0")
     packIntoJar("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.0")
@@ -67,10 +66,6 @@ tasks {
 
     // Sorry, I have no idea.
     Unit
-}
-
-tasks.distTar {
-  compression = Compression.GZIP
 }
 
 distributions {
