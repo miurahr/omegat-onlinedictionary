@@ -6,26 +6,25 @@ plugins {
     distribution
     id("com.diffplug.gradle.spotless") version "3.27.1"
     id("com.github.kt3k.coveralls") version "2.10.2"
-    id("org.omegat.gradle") version "1.4.2"
+    id("org.omegat.gradle") version "1.5.3"
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.5"
-    id("com.sarhanm.versioner") version "4.0.2"
+    id("com.palantir.git-version") version "0.12.3"
+}
+
+// calculate version string from git tag, hash and commit distance
+fun getVersionDetails(): com.palantir.gradle.gitversion.VersionDetails = (extra["versionDetails"] as groovy.lang.Closure<*>)() as com.palantir.gradle.gitversion.VersionDetails
+if (getVersionDetails().isCleanTag) {
+    version = getVersionDetails().lastTag.substring(1)
+} else {
+    version = getVersionDetails().lastTag.substring(1) + "-" + getVersionDetails().commitDistance + "-" + getVersionDetails().gitHash + "-SNAPSHOT"
 }
 
 group = "tokyo.northside"
-versioner {
-    snapshot=false
-    omitBranchMetadata=true
-    disableHotfixVersioning=true
-}
 
 omegat {
-    version = "5.4.1"
+    version = "5.5.0"
     pluginClass = "tokyo.northside.omegat.onlinedictionary.OnlineDictionaryPlugin"
     // projectDir = File(project.projectDir, "test-project").toString()
-}
-
-repositories {
-    jcenter()
 }
 
 dependencies {
