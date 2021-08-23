@@ -4,7 +4,7 @@ plugins {
     checkstyle
     jacoco
     distribution
-    id("com.diffplug.spotless") version "5.14.2"
+    id("com.diffplug.spotless") version "5.14.3"
     id("com.github.kt3k.coveralls") version "2.12.0"
     id("org.omegat.gradle") version "1.5.3"
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.13"
