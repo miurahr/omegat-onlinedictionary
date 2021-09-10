@@ -30,8 +30,6 @@ import org.omegat.core.dictionaries.IDictionaryFactory;
 import org.omegat.core.events.IApplicationEventListener;
 import org.omegat.util.Language;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tokyo.northside.omegat.onlinedictionary.drivers.IOnlineDictionaryDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.OmegawikiDriver;
 import tokyo.northside.omegat.onlinedictionary.drivers.OxfordDriver;
@@ -89,6 +87,7 @@ public final class OnlineDictionaryPlugin {
         static {
             SUPPORTED_DRIVERS.add("omegawiki");
             SUPPORTED_DRIVERS.add("oxfordapi");
+            SUPPORTED_DRIVERS.add("cambridge");
         }
 
         public OnlineDictionaryMain() { }

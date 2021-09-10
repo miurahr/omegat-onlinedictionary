@@ -97,9 +97,10 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
                 sb.append("/");
                 sb.append(meaning.getE());
             }
+            cache.put(word, sb.toString());
         }
         return cache.getValues(word);
-   }
+    }
 
     protected List<OmegawikiMeaning> querySyntrans(final String word) {
         List<OmegawikiMeaning> meanings = new ArrayList<>();
@@ -112,7 +113,7 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
                 String queryUrl = queryUrlBase.concat(dmid);
                 String resultJson = null;
                 try {
-                    resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
+                    resultJson = QueryUtil.query(queryUrl, new HashMap<>());
                 } catch (ClientProtocolException cpe) {
                     LOGGER.info(cpe.getMessage());
                     return meanings;
@@ -140,7 +141,7 @@ public class OmegawikiDriver implements IOnlineDictionaryDriver {
         String resultJson;
         String queryUrl = endpointUrl.concat("?action=ow_express&format=json&search=").concat(word);
         try {
-            resultJson = QueryUtil.query(queryUrl, new HashMap<String, Object>());
+            resultJson = QueryUtil.query(queryUrl, new HashMap<>());
         } catch (ClientProtocolException cpe) {
             LOGGER.info(cpe.getMessage());
             return definitions;
