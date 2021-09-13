@@ -42,7 +42,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.8.0")
     testImplementation("commons-io:commons-io:2.7")
-    testImplementation("org.codehaus.groovy:groovy-all:3.0.8")
+    testImplementation("org.codehaus.groovy:groovy-all:3.0.9")
 }
 
 tasks {
