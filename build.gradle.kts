@@ -35,7 +35,7 @@ dependencies {
     packIntoJar("org.slf4j:slf4j-api:1.7.25")
     packIntoJar("org.apache.httpcomponents.client5:httpclient5:5.1.2")
     packIntoJar("com.fasterxml.jackson.core:jackson-core:2.13.0")
-    packIntoJar("com.fasterxml.jackson.core:jackson-databind:2.13.0")
+    packIntoJar("com.fasterxml.jackson.core:jackson-databind:2.13.1")
     packIntoJar("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0")
     implementation("commons-io:commons-io:2.11.0")
     implementation("commons-lang:commons-lang:2.6")
