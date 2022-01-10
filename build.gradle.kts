@@ -6,7 +6,7 @@ plugins {
     distribution
     id("com.diffplug.spotless") version "6.0.4"
     id("com.github.kt3k.coveralls") version "2.12.0"
-    id("org.omegat.gradle") version "1.5.3"
+    id("org.omegat.gradle") version "1.5.7"
     id("com.github.nbaztec.coveralls-jacoco") version "1.2.13"
     id("com.palantir.git-version") version "0.12.3"
 }
